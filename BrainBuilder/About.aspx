@@ -113,7 +113,7 @@
                         <img src="assets/img/gallery/about.png" alt="">
 
                         <div class="video-icon" >
-                            <a class="popup-video btn-icon" href="https://www.youtube.com/watch?v=up68UAfH0d0"><i class="fas fa-play"></i></a>
+                            <iframe class="rounded"  width="560" height="315" src="https://www.youtube.com/embed/mte9z9jSFoQ?si=penpe_dOV02U4iYl&amp;start=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>

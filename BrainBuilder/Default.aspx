@@ -108,10 +108,8 @@
                 <div class="right-content1">
                     <!-- img -->
                     <div class="right-img">
-                        <img src="assets/img/gallery/about.png" alt="">
-
                         <div class="video-icon" >
-                            <a class="popup-video btn-icon" href="https://www.youtube.com/watch?v=up68UAfH0d0"><i class="fas fa-play"></i></a>
+                           <iframe class="rounded" width="560" height="315" src="https://www.youtube.com/embed/594ITLAyL1o?si=YXxN7EGoolsRoujH&amp;start=10" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
@@ -135,7 +133,7 @@
                                 <img src="assets/img/gallery/topic1.png" alt="">
                                 <div class="topic-content-box">
                                     <div class="topic-content">
-                                        <h3><a href="#">Programing</a></h3>
+                                        <h3><a href="Courses.aspx">Internet of Things</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -147,7 +145,7 @@
                                 <img src="assets/img/gallery/topic2.png" alt="">
                                 <div class="topic-content-box">
                                     <div class="topic-content">
-                                        <h3><a href="#">Programing</a></h3>
+                                        <h3><a href="Courses.aspx">Machine learning</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -159,7 +157,7 @@
                                 <img src="assets/img/gallery/topic3.png" alt="">
                                 <div class="topic-content-box">
                                     <div class="topic-content">
-                                        <h3><a href="#">Programing</a></h3>
+                                        <h3><a href="Courses.aspx">Generative AI</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -171,7 +169,7 @@
                                 <img src="assets/img/gallery/topic4.png" alt="">
                                 <div class="topic-content-box">
                                     <div class="topic-content">
-                                        <h3><a href="#">Programing</a></h3>
+                                        <h3><a href="Courses.aspx">Data Science</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -183,7 +181,7 @@
                                 <img src="assets/img/gallery/topic5.png" alt="">
                                 <div class="topic-content-box">
                                     <div class="topic-content">
-                                        <h3><a href="#">Programing</a></h3>
+                                        <h3><a href="Courses.aspx">Cloud Computing</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -195,7 +193,7 @@
                                 <img src="assets/img/gallery/topic6.png" alt="">
                                 <div class="topic-content-box">
                                     <div class="topic-content">
-                                        <h3><a href="#">Programing</a></h3>
+                                        <h3><a href="Courses.aspx">Azure Data Engineer</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -207,7 +205,7 @@
                                 <img src="assets/img/gallery/topic7.png" alt="">
                                 <div class="topic-content-box">
                                     <div class="topic-content">
-                                        <h3><a href="#">Programing</a></h3>
+                                        <h3><a href="Courses.aspx">DevOps</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -219,7 +217,7 @@
                                 <img src="assets/img/gallery/topic8.png" alt="">
                                 <div class="topic-content-box">
                                     <div class="topic-content">
-                                        <h3><a href="#">Programing</a></h3>
+                                        <h3><a href="Courses.aspx">Blockchain</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -283,7 +281,7 @@
         </section>
         <!-- About Area End -->
         <!--? Team -->
-        <section class="team-area section-padding40 fix">
+       <section class="team-area section-padding40 fix">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-7 col-lg-8">

@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="About page" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="BrainBuilder.About" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-     <main>
+    <main>
         <!--? slider Area Start-->
         <section class="slider-area slider-area2">
             <div class="slider-active">
@@ -15,14 +16,15 @@
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item"><a href="Default.aspx">Home</a></li>
-                                            <li class="breadcrumb-item"><a href="Contact.aspx">Contact</a></li> 
+                                            <li class="breadcrumb-item"><a href="Courses.aspx">Courses</a></li>
+                                            <li class="breadcrumb-item"><a href="Contact.aspx">Contact</a></li>
                                         </ol>
                                     </nav>
                                     <!-- breadcrumb End -->
                                 </div>
                             </div>
                         </div>
-                    </div>          
+                    </div>
                 </div>
             </div>
         </section>
@@ -76,9 +78,11 @@
                     <div class="section-tittle section-tittle2 mb-55">
                         <div class="front-text">
                             <h2 class="">Learn new skills online with top educators</h2>
-                            <p>The automated process all your website tasks. Discover tools and 
+                            <p>
+                                The automated process all your website tasks. Discover tools and 
                                 techniques to engage effectively with vulnerable children and young 
-                            people.</p>
+                            people.
+                            </p>
                         </div>
                     </div>
                     <div class="single-features">
@@ -112,8 +116,8 @@
                     <div class="right-img">
                         <img src="assets/img/gallery/about.png" alt="">
 
-                        <div class="video-icon" >
-                            <iframe class="rounded"  width="560" height="315" src="https://www.youtube.com/embed/mte9z9jSFoQ?si=penpe_dOV02U4iYl&amp;start=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <div class="video-icon">
+                            <iframe class="rounded" width="560" height="315" src="https://www.youtube.com/embed/mte9z9jSFoQ?si=penpe_dOV02U4iYl&amp;start=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
@@ -137,7 +141,7 @@
                                 <img src="assets/img/gallery/topic1.png" alt="">
                                 <div class="topic-content-box">
                                     <div class="topic-content">
-                                        <h3><a href="#">Programing</a></h3>
+                                        <h3><a href="Courses.aspx">Internet of Things</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -149,7 +153,7 @@
                                 <img src="assets/img/gallery/topic2.png" alt="">
                                 <div class="topic-content-box">
                                     <div class="topic-content">
-                                        <h3><a href="#">Programing</a></h3>
+                                        <h3><a href="Courses.aspx">Machine learning</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -161,7 +165,7 @@
                                 <img src="assets/img/gallery/topic3.png" alt="">
                                 <div class="topic-content-box">
                                     <div class="topic-content">
-                                        <h3><a href="#">Programing</a></h3>
+                                        <h3><a href="Courses.aspx">Generative AI</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -173,7 +177,7 @@
                                 <img src="assets/img/gallery/topic4.png" alt="">
                                 <div class="topic-content-box">
                                     <div class="topic-content">
-                                        <h3><a href="#">Programing</a></h3>
+                                        <h3><a href="Courses.aspx">Data Science</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -185,7 +189,7 @@
                                 <img src="assets/img/gallery/topic5.png" alt="">
                                 <div class="topic-content-box">
                                     <div class="topic-content">
-                                        <h3><a href="#">Programing</a></h3>
+                                        <h3><a href="Courses.aspx">Cloud Computing</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -197,7 +201,7 @@
                                 <img src="assets/img/gallery/topic6.png" alt="">
                                 <div class="topic-content-box">
                                     <div class="topic-content">
-                                        <h3><a href="#">Programing</a></h3>
+                                        <h3><a href="Courses.aspx">Azure Data Engineer</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -209,7 +213,7 @@
                                 <img src="assets/img/gallery/topic7.png" alt="">
                                 <div class="topic-content-box">
                                     <div class="topic-content">
-                                        <h3><a href="#">Programing</a></h3>
+                                        <h3><a href="Courses.aspx">DevOps</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -221,7 +225,7 @@
                                 <img src="assets/img/gallery/topic8.png" alt="">
                                 <div class="topic-content-box">
                                     <div class="topic-content">
-                                        <h3><a href="#">Programing</a></h3>
+                                        <h3><a href="Courses.aspx">Blockchain</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -267,8 +271,10 @@
                             <img src="assets/img/icon/right-icon.svg" alt="">
                         </div>
                         <div class="features-caption">
-                            <p>Join millions of people from around the world
-                            learning together.</p>
+                            <p>
+                                Join millions of people from around the world
+                            learning together.
+                            </p>
                         </div>
                     </div>
                     <div class="single-features">
@@ -276,8 +282,10 @@
                             <img src="assets/img/icon/right-icon.svg" alt="">
                         </div>
                         <div class="features-caption">
-                            <p>Join millions of people from around the world learning together.
-                            Online learning is as easy and natural.</p>
+                            <p>
+                                Join millions of people from around the world learning together.
+                            Online learning is as easy and natural.
+                            </p>
                         </div>
                     </div>
                 </div>

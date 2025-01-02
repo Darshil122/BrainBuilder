@@ -14,8 +14,8 @@
                                     <!-- breadcrumb Start-->
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
-                                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                            <li class="breadcrumb-item"><a href="#">Services</a></li> 
+                                            <li class="breadcrumb-item"><a href="Default.aspx">Home</a></li>
+                                            <li class="breadcrumb-item"><a href="About.aspx">About</a></li> 
                                         </ol>
                                     </nav>
                                     <!-- breadcrumb End -->
@@ -259,7 +259,7 @@
                                 <img src="assets/img/gallery/topic1.png" alt="">
                                 <div class="topic-content-box">
                                     <div class="topic-content">
-                                        <h3><a href="#">Programing</a></h3>
+                                        <h3><a href="Courses.aspx">Internet of Things</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -271,7 +271,7 @@
                                 <img src="assets/img/gallery/topic2.png" alt="">
                                 <div class="topic-content-box">
                                     <div class="topic-content">
-                                        <h3><a href="#">Programing</a></h3>
+                                        <h3><a href="Courses.aspx">Machine learning</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -283,7 +283,7 @@
                                 <img src="assets/img/gallery/topic3.png" alt="">
                                 <div class="topic-content-box">
                                     <div class="topic-content">
-                                        <h3><a href="#">Programing</a></h3>
+                                        <h3><a href="Courses.aspx">Generative AI</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -295,7 +295,7 @@
                                 <img src="assets/img/gallery/topic4.png" alt="">
                                 <div class="topic-content-box">
                                     <div class="topic-content">
-                                        <h3><a href="#">Programing</a></h3>
+                                        <h3><a href="Courses.aspx">Data Science</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -307,7 +307,7 @@
                                 <img src="assets/img/gallery/topic5.png" alt="">
                                 <div class="topic-content-box">
                                     <div class="topic-content">
-                                        <h3><a href="#">Programing</a></h3>
+                                        <h3><a href="Courses.aspx">Cloud Computing</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -319,7 +319,7 @@
                                 <img src="assets/img/gallery/topic6.png" alt="">
                                 <div class="topic-content-box">
                                     <div class="topic-content">
-                                        <h3><a href="#">Programing</a></h3>
+                                        <h3><a href="Courses.aspx">Azure Data Engineer</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -331,7 +331,7 @@
                                 <img src="assets/img/gallery/topic7.png" alt="">
                                 <div class="topic-content-box">
                                     <div class="topic-content">
-                                        <h3><a href="#">Programing</a></h3>
+                                        <h3><a href="Courses.aspx">DevOps</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -343,7 +343,7 @@
                                 <img src="assets/img/gallery/topic8.png" alt="">
                                 <div class="topic-content-box">
                                     <div class="topic-content">
-                                        <h3><a href="#">Programing</a></h3>
+                                        <h3><a href="Courses.aspx">Blockchain</a></h3>
                                     </div>
                                 </div>
                             </div>

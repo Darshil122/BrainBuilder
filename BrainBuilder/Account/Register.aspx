@@ -22,31 +22,31 @@
     <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
 <body>
-    <main class="login-body" data-vide-bg="assets/img/login-bg.mp4">
+    <main class="login-body">
     <!-- Login Admin -->
-    <form class="form-default" action="login-bg.mp4" method="post">
+    <form runat="server" class="form-default" method="post">
         
         <div class="login-form">
             <h2>Registration Here</h2>
 
             <div class="form-input">
                 <label for="name">Full name</label>
-                <input  type="text" name="name" placeholder="Full name"/>
+                <input  type="text" name="name" placeholder="Full name" id="name" runat="server"/>
             </div>
             <div class="form-input">
                 <label for="name">Email Address</label>
-                <input type="email" name="email" placeholder="Email Address"/>
+                <input type="email" name="email" id="email" placeholder="Email Address" runat="server"/>
             </div>
             <div class="form-input">
                 <label for="name">Password</label>
-                <input type="password" name="password" placeholder="Password"/>
+                <input type="password" name="password" id="password" placeholder="Password" runat="server"/>
             </div>
             <div class="form-input">
                 <label for="name">Confirm Password</label>
-                <input type="password" name="password" placeholder="Confirm Password"/>
+                <input type="password" name="password" id="confirmPassword" placeholder="Confirm Password" runat="server"/>
             </div>
             <div class="form-input pt-30">
-                <input type="submit" name="submit" value="Registration"/>
+                <input type="submit" runat="server" name="submit" OnServerClick="RegisterUser" value="Registration"/>
             </div>
             <!-- Forget Password -->
             <a href="Login.aspx" class="registration">login</a>

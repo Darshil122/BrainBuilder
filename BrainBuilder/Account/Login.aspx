@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="BrainBuilder.Account.Register" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="BrainBuilder.Account.Login" %>
 
 <!DOCTYPE html>
 
@@ -24,28 +24,27 @@
 <body>
         <main class="login-body bg-primary">
             <!-- Login Admin -->
-            <form class="form-default" action="login-bg.mp4" method="post">
+            <form id="loginForm" runat="server">
+    <div class="login-form">
+        <h2>Login Here</h2>
+        <div class="form-input">
+            <label for="email">Email</label>
+            <asp:TextBox ID="email" runat="server" CssClass="form-control" placeholder="Email"></asp:TextBox>
+        </div>
+        <div class="form-input">
+            <label for="password">Password</label>
+            <asp:TextBox ID="password" runat="server" TextMode="Password" CssClass="form-control" placeholder="Password"></asp:TextBox>
+        </div>
+        <div class="form-input pt-30">
+            <asp:Button ID="btnLogin" runat="server" CssClass="btn btn-primary" Text="Log in" OnClick="LoginUser" />
+        </div>
+        <!-- Forget Password -->
+        <a href="../Default.aspx" class="forget">Forget Password</a>
+        <!-- Registration -->
+        <a href="Register.aspx" class="registration">Registration</a>
+    </div>
+</form>
 
-                <div class="login-form">
-                    <h2>Login Here</h2>
-                    <div class="form-input">
-                        <label for="name">Email</label>
-                        <input type="email" name="email" placeholder="Email" />
-                    </div>
-                    <div class="form-input">
-                        <label for="name">Password</label>
-                        <input type="password" name="password" placeholder="Password" />
-                    </div>
-                    <div class="form-input pt-30">
-                        <input type="submit" name="submit" value="login" />
-                    </div>
-
-                    <!-- Forget Password -->
-                    <a href="../Default.aspx" class="forget">Forget Password</a>
-                    <!-- Forget Password -->
-                    <a href="Register.aspx" class="registration">Registration</a>
-                </div>
-            </form>
             <!-- /end login form -->
         </main>
     <script src="../assets/js/vendor/modernizr-3.5.0.min.js"></script>

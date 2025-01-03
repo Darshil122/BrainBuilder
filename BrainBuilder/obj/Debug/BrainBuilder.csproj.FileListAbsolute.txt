@@ -18,3 +18,5 @@ D:\BrainBuilder\BrainBuilder\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatf
 D:\BrainBuilder\BrainBuilder\obj\Debug\BrainBuilder.csprojResolveAssemblyReference.cache
 D:\BrainBuilder\BrainBuilder\obj\Debug\BrainBuilder.dll
 D:\BrainBuilder\BrainBuilder\obj\Debug\BrainBuilder.pdb
+D:\BrainBuilder\BrainBuilder\bin\BCrypt.Net.dll
+D:\BrainBuilder\BrainBuilder\bin\BCrypt.Net.xml

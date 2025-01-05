@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Web.Security;
 
 namespace BrainBuilder.Account
 {
@@ -8,46 +9,71 @@ namespace BrainBuilder.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Any initialization code if needed
+            if (!IsPostBack)
+            {
+                // Check if the user is already logged in
+                if (Session["UserEmail"] != null)
+                {
+                    Response.Redirect("~/Default.aspx");
+                }
+            }
         }
 
         protected void LoginUser(object sender, EventArgs e)
         {
+            // Get email and password from TextBox inputs
             string userEmail = email.Text.Trim();
             string userPassword = password.Text.Trim();
 
-            string connectionString = ConfigurationManager.ConnectionStrings["BrainBuilderDB"].ConnectionString;
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            // Validate inputs
+            if (string.IsNullOrEmpty(userEmail) || string.IsNullOrEmpty(userPassword))
             {
-                try
-                {
-                    connection.Open();
-                    string query = "SELECT COUNT(1) FROM Users WHERE Email = @Email AND Password = @Password";
-                    SqlCommand cmd = new SqlCommand(query, connection);
-                    cmd.Parameters.AddWithValue("@Email", userEmail);
-                    cmd.Parameters.AddWithValue("@Password", userPassword);
+                ShowError("Email and Password cannot be empty.");
+                return;
+            }
 
-                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+            try
+            {
+                // Get connection string from Web.config
+                string connectionString = ConfigurationManager.ConnectionStrings["BrainBuilderDB"].ConnectionString;
 
-                    if (count == 1)
-                    {
-                        // Login successful
-                        Session["UserEmail"] = userEmail;
-                        Response.Redirect("~/Home.aspx");
-                    }
-                    else
-                    {
-                        // Invalid credentials
-                        Response.Write("<script>alert('Invalid email or password.');</script>");
-                    }
-                }
-                catch (Exception ex)
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    // Log or display error
-                    Response.Write("<script>alert('Error: " + ex.Message + "');</script>");
+                    conn.Open();
+
+                    // Query to check if the user exists and credentials match
+                    string query = "SELECT COUNT(*) FROM Users WHERE Email = @Email AND Password = @Password";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    { 
+                        cmd.Parameters.AddWithValue("@Email", userEmail);
+                        cmd.Parameters.AddWithValue("@Password", userPassword); // Assuming passwords are stored as plain text; consider hashing them
+
+                        int userExists = (int)cmd.ExecuteScalar();
+
+                        if (userExists > 0)
+                        {
+                            // Login successful
+                            Session["UserEmail"] = userEmail;
+                            FormsAuthentication.RedirectFromLoginPage(userEmail, false);
+                        }
+                        else
+                        {
+                            ShowError("Invalid email or password.");
+                        }
+                    }
                 }
             }
+            catch (Exception ex)
+            { 
+                ShowError("An error occurred while processing your request. Please try again later.");
+                Console.WriteLine("Error: " + ex.Message);
+            }
+        }
+
+        private void ShowError(string message)
+        {
+            Response.Write($"<script>alert('{message}');</script>");
         }
     }
 }

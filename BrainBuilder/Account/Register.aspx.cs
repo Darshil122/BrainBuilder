@@ -24,18 +24,18 @@ namespace BrainBuilder.Account
                 return;
             }
 
-            string passwordHash = BCrypt.Net.BCrypt.HashPassword(password); // Hash the password
+            //string passwordHash = BCrypt.Net.BCrypt.HashPassword(password); // Hash the password
 
             string connectionString = ConfigurationManager.ConnectionStrings["BrainBuilderDB"].ConnectionString;
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                string query = "INSERT INTO Users (FullName, Email, PasswordHash) VALUES (@FullName, @Email, @PasswordHash)";
+                string query = "INSERT INTO Users (FullName, Email, Password) VALUES (@FullName, @Email, @Password)";
                 SqlCommand cmd = new SqlCommand(query, con);
 
                 cmd.Parameters.AddWithValue("@FullName", fullName);
                 cmd.Parameters.AddWithValue("@Email", email);
-                cmd.Parameters.AddWithValue("@PasswordHash", passwordHash);
+                cmd.Parameters.AddWithValue("@Password", password);
 
                 try
                 {

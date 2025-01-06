@@ -90,6 +90,15 @@
     <Content Include="assets\css\slicknav.css" />
     <Content Include="assets\css\style.css" />
     <Content Include="assets\css\themify-icons.css" />
+    <Content Include="assets\img\gallery\ARVR.png" />
+    <Content Include="assets\img\gallery\azure_data_engineer.png" />
+    <Content Include="assets\img\gallery\Blockchain.png" />
+    <Content Include="assets\img\gallery\cloud-computing.png" />
+    <Content Include="assets\img\gallery\DataSci.png" />
+    <Content Include="assets\img\gallery\devops.png" />
+    <Content Include="assets\img\gallery\Generative_AI.png" />
+    <Content Include="assets\img\gallery\machine.png" />
+    <Content Include="assets\img\gallery\softwareDev.png" />
     <Content Include="assets\img\logo\bb.png" />
     <Content Include="assets\img\logo\Brain Builder.png" />
     <Content Include="assets\js\animated.headline.js" />

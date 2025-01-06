@@ -137,7 +137,7 @@
                                 <img src="assets/img/gallery/topic1.png" alt="">
                                 <div class="topic-content-box">
                                     <div class="topic-content">
-                                        <h3><a href="Courses.aspx">Internet of Things</a></h3>
+                                        <h3><a href="Courses.aspx">Software development</a></h3>
                                     </div>
                                 </div>
                             </div>

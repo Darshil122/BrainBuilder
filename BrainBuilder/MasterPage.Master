@@ -59,6 +59,7 @@
                                                     <% if (Session["UserEmail"] == null) { %>
                                                         <li class="button-header"><a href="Account/Login.aspx" class="btn btn3">Log in</a></li>
                                                     <% } else { %>
+                                                        <li><a href="Account/Logout.aspx">Logout</a></li>
                                                         <li class="button-header"><a href="#" class=""><%= Session["UserEmail"] %></a></li>
                                                     <% } %>
                                                 </ul>
@@ -222,5 +223,6 @@
 <!-- Jquery Plugins, main Jquery -->	
 <script src="./assets/js/plugins.js"></script>
 <script src="./assets/js/main.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

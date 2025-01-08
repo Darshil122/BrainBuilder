@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="Courses Page" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Courses.aspx.cs" Inherits="BrainBuilder.Courses" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <main>
         <!--? slider Area Start-->
@@ -15,14 +16,14 @@
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item"><a href="Default.aspx">Home</a></li>
-                                            <li class="breadcrumb-item"><a href="About.aspx">About</a></li> 
+                                            <li class="breadcrumb-item"><a href="About.aspx">About</a></li>
                                         </ol>
                                     </nav>
                                     <!-- breadcrumb End -->
                                 </div>
                             </div>
                         </div>
-                    </div>          
+                    </div>
                 </div>
             </div>
         </section>
@@ -47,7 +48,8 @@
                                 <div class="properties__caption">
                                     <%--<p>User Experience</p>--%>
                                     <h3><a href="#">Software development</a></h3>
-                                    <p>The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.
+                                    <p>
+                                        The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.
                                     </p>
                                     <div class="properties__footer d-flex justify-content-between align-items-center">
                                         <div class="restaurant-name">
@@ -64,7 +66,11 @@
                                             <span>$135</span>
                                         </div>--%>
                                     </div>
-                                    <a href="#" class="border-btn border-btn2">Find out more</a>
+                                   <% if (Session["UserEmail"] == null) { %>
+                                        <a href="Account/Login.aspx" class="border-btn border-btn2">Login to Find out more</a>
+                                    <% } else { %>
+                                        <a href="software-development.aspx" class="border-btn border-btn2">Find out more</a>
+                                    <% } %>
                                 </div>
                             </div>
                         </div>
@@ -79,7 +85,8 @@
                                 <div class="properties__caption">
                                     <%--<p>User Experience</p>--%>
                                     <h3><a href="#">Machine learning</a></h3>
-                                    <p>The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.
+                                    <p>
+                                        The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.
                                         
                                     </p>
                                     <div class="properties__footer d-flex justify-content-between align-items-center">
@@ -97,9 +104,13 @@
                                             <span>$135</span>
                                         </div>--%>
                                     </div>
-                                    <a href="#" class="border-btn border-btn2">Find out more</a>
+                                     <% if (Session["UserEmail"] == null) { %>
+                                        <a href="Account/Login.aspx" class="border-btn border-btn2">Login to Find out more</a>
+                                    <% } else { %>
+                                        <a href="software-development.aspx" class="border-btn border-btn2">Find out more</a>
+                                    <% } %>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -113,7 +124,8 @@
                                 <div class="properties__caption">
                                     <%--<p>User Experience</p>--%>
                                     <h3><a href="#">Generative AI</a></h3>
-                                    <p>The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.
+                                    <p>
+                                        The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.
                                         
                                     </p>
                                     <div class="properties__footer d-flex justify-content-between align-items-center">
@@ -131,9 +143,13 @@
                                             <span>$135</span>
                                         </div>--%>
                                     </div>
-                                    <a href="#" class="border-btn border-btn2">Find out more</a>
+                                      <% if (Session["UserEmail"] == null) { %>
+                                        <a href="Account/Login.aspx" class="border-btn border-btn2">Login to Find out more</a>
+                                    <% } else { %>
+                                        <a href="software-development.aspx" class="border-btn border-btn2">Find out more</a>
+                                    <% } %>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -147,7 +163,8 @@
                                 <div class="properties__caption">
                                     <%--<p>User Experience</p>--%>
                                     <h3><a href="#">Data Science</a></h3>
-                                    <p>The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.
+                                    <p>
+                                        The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.
                                         
                                     </p>
                                     <div class="properties__footer d-flex justify-content-between align-items-center">
@@ -161,13 +178,17 @@
                                             </div>
                                             <%--<p><span>(4.5)</span> based on 120</p>--%>
                                         </div>
-                                       <%-- <div class="price">
+                                        <%-- <div class="price">
                                             <span>$135</span>
                                         </div>--%>
                                     </div>
-                                    <a href="#" class="border-btn border-btn2">Find out more</a>
+                                     <% if (Session["UserEmail"] == null) { %>
+                                        <a href="Account/Login.aspx" class="border-btn border-btn2">Login to Find out more</a>
+                                    <% } else { %>
+                                        <a href="software-development.aspx" class="border-btn border-btn2">Find out more</a>
+                                    <% } %>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -175,12 +196,14 @@
                         <div class="properties properties2 mb-30">
                             <div class="properties__card">
                                 <div class="properties__img overlay1">
-                                    <a href="#"><img height="180px" src="assets/img/gallery/cloud-computing.png" /></a>
+                                    <a href="#">
+                                        <img height="180px" src="assets/img/gallery/cloud-computing.png" /></a>
                                 </div>
                                 <div class="properties__caption">
                                     <%--<p>User Experience</p>--%>
                                     <h3><a href="#">Cloud Computing</a></h3>
-                                    <p>The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.
+                                    <p>
+                                        The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.
                                         
                                     </p>
                                     <div class="properties__footer d-flex justify-content-between align-items-center">
@@ -194,13 +217,17 @@
                                             </div>
                                             <%--<p><span>(4.5)</span> based on 120</p>--%>
                                         </div>
-                                       <%-- <div class="price">
+                                        <%-- <div class="price">
                                             <span>$135</span>
                                         </div>--%>
                                     </div>
-                                    <a href="#" class="border-btn border-btn2">Find out more</a>
+                                     <% if (Session["UserEmail"] == null) { %>
+                                        <a href="Account/Login.aspx" class="border-btn border-btn2">Login to Find out more</a>
+                                    <% } else { %>
+                                        <a href="software-development.aspx" class="border-btn border-btn2">Find out more</a>
+                                    <% } %>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -214,7 +241,8 @@
                                 <div class="properties__caption">
                                     <%--<p>User Experience</p>--%>
                                     <h3><a href="#">Azure Data Engineer</a></h3>
-                                    <p>The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.
+                                    <p>
+                                        The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.
                                     </p>
                                     <div class="properties__footer d-flex justify-content-between align-items-center">
                                         <div class="restaurant-name">
@@ -227,16 +255,20 @@
                                             </div>
                                             <%--<p><span>(4.5)</span> based on 120</p>--%>
                                         </div>
-                                      <%--  <div class="price">
+                                        <%--  <div class="price">
                                             <span>$135</span>
                                         </div>--%>
                                     </div>
-                                    <a href="#" class="border-btn border-btn2">Find out more</a>
+                                     <% if (Session["UserEmail"] == null) { %>
+                                        <a href="Account/Login.aspx" class="border-btn border-btn2">Login to Find out more</a>
+                                    <% } else { %>
+                                        <a href="software-development.aspx" class="border-btn border-btn2">Find out more</a>
+                                    <% } %>
                                 </div>
                             </div>
                         </div>
                     </div>
-                     <div class="col-lg-4">
+                    <div class="col-lg-4">
                         <div class="properties properties2 mb-30">
                             <div class="properties__card">
                                 <div class="properties__img overlay1">
@@ -246,7 +278,8 @@
                                 <div class="properties__caption">
                                     <%--<p>User Experience</p>--%>
                                     <h3><a href="#">DevOps</a></h3>
-                                    <p>The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.
+                                    <p>
+                                        The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.
                                     </p>
                                     <div class="properties__footer d-flex justify-content-between align-items-center">
                                         <div class="restaurant-name">
@@ -259,16 +292,20 @@
                                             </div>
                                             <%--<p><span>(4.5)</span> based on 120</p>--%>
                                         </div>
-                                      <%--  <div class="price">
+                                        <%--  <div class="price">
                                             <span>$135</span>
                                         </div>--%>
                                     </div>
-                                    <a href="#" class="border-btn border-btn2">Find out more</a>
+                                      <% if (Session["UserEmail"] == null) { %>
+                                        <a href="Account/Login.aspx" class="border-btn border-btn2">Login to Find out more</a>
+                                    <% } else { %>
+                                        <a href="software-development.aspx" class="border-btn border-btn2">Find out more</a>
+                                    <% } %>
                                 </div>
                             </div>
                         </div>
                     </div>
-                     <div class="col-lg-4">
+                    <div class="col-lg-4">
                         <div class="properties properties2 mb-30">
                             <div class="properties__card">
                                 <div class="properties__img overlay1">
@@ -278,7 +315,8 @@
                                 <div class="properties__caption">
                                     <%--<p>User Experience</p>--%>
                                     <h3><a href="#">Blockchain</a></h3>
-                                    <p>The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.
+                                    <p>
+                                        The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.
                                     </p>
                                     <div class="properties__footer d-flex justify-content-between align-items-center">
                                         <div class="restaurant-name">
@@ -291,11 +329,15 @@
                                             </div>
                                             <%--<p><span>(4.5)</span> based on 120</p>--%>
                                         </div>
-                                      <%--  <div class="price">
+                                        <%--  <div class="price">
                                             <span>$135</span>
                                         </div>--%>
                                     </div>
-                                    <a href="#" class="border-btn border-btn2">Find out more</a>
+                                      <% if (Session["UserEmail"] == null) { %>
+                                        <a href="Account/Login.aspx" class="border-btn border-btn2">Login to Find out more</a>
+                                    <% } else { %>
+                                        <a href="software-development.aspx" class="border-btn border-btn2">Find out more</a>
+                                    <% } %>
                                 </div>
                             </div>
                         </div>
@@ -310,7 +352,8 @@
                                 <div class="properties__caption">
                                     <%--<p>User Experience</p>--%>
                                     <h3><a href="#">AR/VR</a></h3>
-                                    <p>The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.
+                                    <p>
+                                        The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.
                                     </p>
                                     <div class="properties__footer d-flex justify-content-between align-items-center">
                                         <div class="restaurant-name">
@@ -323,7 +366,7 @@
                                             </div>
                                             <%--<p><span>(4.5)</span> based on 120</p>--%>
                                         </div>
-                                      <%--  <div class="price">
+                                        <%--  <div class="price">
                                             <span>$135</span>
                                         </div>--%>
                                     </div>
@@ -336,7 +379,7 @@
             </div>
         </div>
         <!-- Courses area End -->
-        
+
         <!-- ? services-area -->
         <div class="services-area services-area2 section-padding40">
             <div class="container">

@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Logout.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="assets\css\animate.min.css" />
     <Content Include="assets\css\animated-headline.css" />
@@ -125,6 +126,7 @@
     <Content Include="assets\js\plugins.js" />
     <Content Include="assets\js\popper.min.js" />
     <Content Include="assets\js\price-range.js" />
+    <Content Include="assets\js\script.js" />
     <Content Include="assets\js\slick.min.js" />
     <Content Include="assets\js\vendor\jquery-1.12.4.min.js" />
     <Content Include="assets\js\vendor\modernizr-3.5.0.min.js" />
@@ -298,6 +300,7 @@
     <Content Include="assets\img\post\post_8.png" />
     <Content Include="assets\img\post\post_9.png" />
     <Content Include="assets\img\post\preview.png" />
+    <Content Include="software-development.aspx" />
     <Content Include="Web.config" />
     <Content Include="Default.aspx" />
   </ItemGroup>
@@ -315,6 +318,13 @@
     </Compile>
     <Compile Include="Account\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
@@ -351,6 +361,13 @@
     </Compile>
     <Compile Include="Courses.aspx.designer.cs">
       <DependentUpon>Courses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="software-development.aspx.cs">
+      <DependentUpon>software-development.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="software-development.aspx.designer.cs">
+      <DependentUpon>software-development.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

@@ -132,7 +132,14 @@
     <Content Include="assets\js\vendor\modernizr-3.5.0.min.js" />
     <Content Include="assets\js\waypoints.min.js" />
     <Content Include="assets\js\wow.min.js" />
+    <Content Include="azure-data-engineer.aspx" />
+    <Content Include="blockchain.aspx" />
+    <Content Include="cloud-computing.aspx" />
     <Content Include="Contact.aspx" />
+    <Content Include="data-science.aspx" />
+    <Content Include="devops.aspx" />
+    <Content Include="generative-ai.aspx" />
+    <Content Include="machine-learning.aspx" />
     <Content Include="packages.config" />
     <Content Include="MasterPage.Master" />
     <Content Include="assets\fonts\fa-brands-400.eot" />
@@ -333,12 +340,61 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="azure-data-engineer.aspx.cs">
+      <DependentUpon>azure-data-engineer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="azure-data-engineer.aspx.designer.cs">
+      <DependentUpon>azure-data-engineer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="blockchain.aspx.cs">
+      <DependentUpon>blockchain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="blockchain.aspx.designer.cs">
+      <DependentUpon>blockchain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cloud-computing.aspx.cs">
+      <DependentUpon>cloud-computing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cloud-computing.aspx.designer.cs">
+      <DependentUpon>cloud-computing.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="data-science.aspx.cs">
+      <DependentUpon>data-science.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="data-science.aspx.designer.cs">
+      <DependentUpon>data-science.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="devops.aspx.cs">
+      <DependentUpon>devops.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="devops.aspx.designer.cs">
+      <DependentUpon>devops.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="generative-ai.aspx.cs">
+      <DependentUpon>generative-ai.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="generative-ai.aspx.designer.cs">
+      <DependentUpon>generative-ai.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="machine-learning.aspx.cs">
+      <DependentUpon>machine-learning.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="machine-learning.aspx.designer.cs">
+      <DependentUpon>machine-learning.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>

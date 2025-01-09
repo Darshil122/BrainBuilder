@@ -107,7 +107,7 @@
                                      <% if (Session["UserEmail"] == null) { %>
                                         <a href="Account/Login.aspx" class="border-btn border-btn2">Login to Find out more</a>
                                     <% } else { %>
-                                        <a href="software-development.aspx" class="border-btn border-btn2">Find out more</a>
+                                        <a href="machine-learning.aspx" class="border-btn border-btn2">Find out more</a>
                                     <% } %>
                                 </div>
 
@@ -146,7 +146,7 @@
                                       <% if (Session["UserEmail"] == null) { %>
                                         <a href="Account/Login.aspx" class="border-btn border-btn2">Login to Find out more</a>
                                     <% } else { %>
-                                        <a href="software-development.aspx" class="border-btn border-btn2">Find out more</a>
+                                        <a href="generative-ai.aspx" class="border-btn border-btn2">Find out more</a>
                                     <% } %>
                                 </div>
 
@@ -185,7 +185,7 @@
                                      <% if (Session["UserEmail"] == null) { %>
                                         <a href="Account/Login.aspx" class="border-btn border-btn2">Login to Find out more</a>
                                     <% } else { %>
-                                        <a href="software-development.aspx" class="border-btn border-btn2">Find out more</a>
+                                        <a href="data-science.aspx" class="border-btn border-btn2">Find out more</a>
                                     <% } %>
                                 </div>
 
@@ -224,7 +224,7 @@
                                      <% if (Session["UserEmail"] == null) { %>
                                         <a href="Account/Login.aspx" class="border-btn border-btn2">Login to Find out more</a>
                                     <% } else { %>
-                                        <a href="software-development.aspx" class="border-btn border-btn2">Find out more</a>
+                                        <a href="cloud-computing.aspx" class="border-btn border-btn2">Find out more</a>
                                     <% } %>
                                 </div>
 
@@ -262,7 +262,7 @@
                                      <% if (Session["UserEmail"] == null) { %>
                                         <a href="Account/Login.aspx" class="border-btn border-btn2">Login to Find out more</a>
                                     <% } else { %>
-                                        <a href="software-development.aspx" class="border-btn border-btn2">Find out more</a>
+                                        <a href="azure-data-engineer.aspx" class="border-btn border-btn2">Find out more</a>
                                     <% } %>
                                 </div>
                             </div>
@@ -299,7 +299,7 @@
                                       <% if (Session["UserEmail"] == null) { %>
                                         <a href="Account/Login.aspx" class="border-btn border-btn2">Login to Find out more</a>
                                     <% } else { %>
-                                        <a href="software-development.aspx" class="border-btn border-btn2">Find out more</a>
+                                        <a href="devops.aspx" class="border-btn border-btn2">Find out more</a>
                                     <% } %>
                                 </div>
                             </div>
@@ -336,7 +336,7 @@
                                       <% if (Session["UserEmail"] == null) { %>
                                         <a href="Account/Login.aspx" class="border-btn border-btn2">Login to Find out more</a>
                                     <% } else { %>
-                                        <a href="software-development.aspx" class="border-btn border-btn2">Find out more</a>
+                                        <a href="blockchain.aspx" class="border-btn border-btn2">Find out more</a>
                                     <% } %>
                                 </div>
                             </div>

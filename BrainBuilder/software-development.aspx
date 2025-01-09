@@ -12,14 +12,6 @@
                             <div class="col-xl-8 col-lg-11 col-md-12">
                                 <div class="hero__caption hero__caption2">
                                     <h1 data-animation="bounceIn" data-delay="0.2s">Software Development</h1>
-                                    <!-- breadcrumb Start-->
-                                    <nav aria-label="breadcrumb">
-                                        <ol class="breadcrumb">
-                                            <li class="breadcrumb-item"><a href="Default.aspx">Home</a></li>
-                                            <li class="breadcrumb-item"><a href="Courses.aspx">Courses</a></li>
-                                        </ol>
-                                    </nav>
-                                    <!-- breadcrumb End -->
                                 </div>
                             </div>
                         </div>
@@ -30,41 +22,52 @@
         <!-- Courses area start -->
 <div class="courses-area section-padding25 fix">
     <div class="container mt-5 p-5 bg-white rounded shadow position-relative">
-        <!-- Question Section -->
-        <div id="question-section" class="d-flex justify-content-between align-items-center mb-4">
-            <h3 class="fw-bold" id="question-title">Question 1</h3>
-            <div class="text-danger fw-bold" id="timer">
-                Time Left: 0:30
-            </div>
+        <div class="d-flex justify-content-center p-5">
+            <img src="assets/img/gallery/softwareDev.png" class="img-fluid" />
         </div>
-            <p id="question-text">
-                The arithmetic mean of the 5 consecutive integers starting with 's' is 'a'. 
-                What is the arithmetic mean of 9 consecutive integers that start with s + 2?
-            </p>
-        
-
-        <!-- Options Section -->
-        <div id="options-section">
-            <div class="form-check mb-3">
-                <input class="form-check-input" type="radio" name="answer" id="option1" value="78">
-                <label class="form-check-label" for="option1">A. 78</label>
+        <div class="mt-3">
+            <p>Software development is at the heart of modern innovation, transforming ideas into functional, user-friendly applications that drive businesses and enhance lives. From creating small-scale solutions to developing enterprise-level systems, software development fuels the digital revolution.</p>
+            <h2 class="font-weight-bold">What is Software Development?</h2>
+            <p>Software development is the process of designing, coding, testing, and maintaining software applications to meet specific requirements. It involves a combination of creativity, problem-solving, and technical expertise to build tools that address real-world challenges and create value for users.</p>
+            <h3 class="font-weight-bold">Key Aspects of Software Development</h3>
+            <ul>
+                <li><p>Requirement Analysis</p></li>
+                <li><p>Design and Architecture</p></li>
+                <li><p>Coding and Development</p></li>
+                <li><p>Testing and Debugging</p></li>
+                <li><p>Deployment and Maintenance</p></li>
+            </ul>
+            <h3 class="font-weight-bold mb">Why is Software Development Important?</h3>
+            <div class="single-features">
+                <div class="features-icon">
+                    <img src="assets/img/icon/right-icon.svg" alt=""/>
+                </div>
+                <div class="features-caption">
+                    <p>Enables companies to automate processes, enhance productivity, and offer innovative solutions.</p>
+                </div>
             </div>
-            <div class="form-check mb-3">
-                <input class="form-check-input" type="radio" name="answer" id="option2" value="58">
-                <label class="form-check-label" for="option2">B. 58</label>
+            <div class="single-features">
+                <div class="features-icon">
+                    <img src="assets/img/icon/right-icon.svg" alt=""/>
+                </div>
+                <div class="features-caption">
+                    <p> Builds applications that make life easier, from mobile apps to web platforms.</p>
+                </div>
             </div>
-            <div class="form-check mb-3">
-                <input class="form-check-input" type="radio" name="answer" id="option3" value="68">
-                <label class="form-check-label" for="option3">C. 68</label>
+            <div class="single-features">
+                <div class="features-icon">
+                    <img src="assets/img/icon/right-icon.svg" alt=""/>
+                </div>
+                <div class="features-caption">
+                    <p>Pushes boundaries in areas like AI, blockchain, IoT, and cloud computing.</p>
+                </div>
             </div>
-            <div class="form-check mb-3">
-                <input class="form-check-input" type="radio" name="answer" id="option4" value="98">
-                <label class="form-check-label" for="option4">D. 98</label>
-            </div>
+            <h3 class="font-weight-bold">Start Your Software Journey Today!</h3>
+            <p>At Brain Builder, we specialize in delivering tailored software solutions that cater to diverse industries. Our team of skilled developers focuses on creating robust, scalable, and secure applications that align with your goals.</p>
         </div>
-
-        <!-- Navigation Button -->
-        <button class="btn mt-3" id="next-button">Next</button>
+        <div>
+            <a href="devops.aspx" class="btn">Start Test</a>
+        </div>
     </div>
 </div>
 

@@ -308,6 +308,7 @@
     <Content Include="assets\img\post\post_9.png" />
     <Content Include="assets\img\post\preview.png" />
     <Content Include="software-development.aspx" />
+    <Content Include="Test.aspx" />
     <Content Include="Web.config" />
     <Content Include="Default.aspx" />
   </ItemGroup>
@@ -424,6 +425,13 @@
     </Compile>
     <Compile Include="software-development.aspx.designer.cs">
       <DependentUpon>software-development.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

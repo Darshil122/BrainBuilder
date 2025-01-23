@@ -28,45 +28,52 @@
             </div>
         </section>
         <!-- Courses area start -->
-<div class="courses-area section-padding25 fix">
-    <div class="container mt-5 p-5 bg-white rounded shadow position-relative">
-        <!-- Question Section -->
-        <div id="question-section" class="d-flex justify-content-between align-items-center mb-4">
-            <h3 class="fw-bold" id="question-title">Question 1</h3>
-            <div class="text-danger fw-bold" id="timer">
-                Time Left: 0:30
+        <div class="courses-area section-padding25 fix">
+            <div class="container mt-5 p-5 bg-white rounded shadow position-relative">
+                <!-- Question Section -->
+                <div id="question-section" class="d-flex justify-content-between align-items-center mb-4">
+                    <h3 class="fw-bold" id="question-title">Question 1</h3>
+                    <div class="text-danger fw-bold" id="timer">
+                        Time Left: 0:30
+           
+                    </div>
+                </div>
+                <p id="question-text">
+                    <asp:Literal ID="questionText" runat="server"></asp:Literal>
+                </p>
+
+                <div id="options-section">
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="answer" id="option1" runat="server">
+                        <label class="form-check-label" for="option1">
+                            <asp:Literal ID="option1Label" runat="server"></asp:Literal>
+                        </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="answer" id="option2" runat="server">
+                        <label class="form-check-label" for="option2">
+                            <asp:Literal ID="option2Label" runat="server"></asp:Literal>
+                        </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="answer" id="option3" runat="server">
+                        <label class="form-check-label" for="option3">
+                            <asp:Literal ID="option3Label" runat="server"></asp:Literal>
+                        </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="answer" id="option4" runat="server">
+                        <label class="form-check-label" for="option4">
+                            <asp:Literal ID="option4Label" runat="server"></asp:Literal>
+                        </label>
+                    </div>
+                </div>
+
+
+                <!-- Navigation Button -->
+                <button class="btn mt-3" id="next-button">Next</button>
             </div>
         </div>
-            <p id="question-text">
-                The arithmetic mean of the 5 consecutive integers starting with 's' is 'a'. 
-                What is the arithmetic mean of 9 consecutive integers that start with s + 2?
-            </p>
-        
-
-        <!-- Options Section -->
-        <div id="options-section">
-            <div class="form-check mb-3">
-                <input class="form-check-input" type="radio" name="answer" id="option1" value="78">
-                <label class="form-check-label" for="option1">A. 78</label>
-            </div>
-            <div class="form-check mb-3">
-                <input class="form-check-input" type="radio" name="answer" id="option2" value="58">
-                <label class="form-check-label" for="option2">B. 58</label>
-            </div>
-            <div class="form-check mb-3">
-                <input class="form-check-input" type="radio" name="answer" id="option3" value="68">
-                <label class="form-check-label" for="option3">C. 68</label>
-            </div>
-            <div class="form-check mb-3">
-                <input class="form-check-input" type="radio" name="answer" id="option4" value="98">
-                <label class="form-check-label" for="option4">D. 98</label>
-            </div>
-        </div>
-
-        <!-- Navigation Button -->
-        <button class="btn mt-3" id="next-button">Next</button>
-    </div>
-</div>
 
         <!-- Courses area End -->
 

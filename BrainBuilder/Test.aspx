@@ -32,46 +32,49 @@
             <div class="container mt-5 p-5 bg-white rounded shadow position-relative">
                 <!-- Question Section -->
                 <div id="question-section" class="d-flex justify-content-between align-items-center mb-4">
-                    <h3 class="fw-bold" id="question-title">Question 1</h3>
+                    <h3 class="fw-bold" id="question-title">
+                        <label class="" for="questionID">
+                            <asp:Literal ID="questionTitle" runat="server"></asp:Literal></label></h3>
                     <div class="text-danger fw-bold" id="timer">
-                        Time Left: 0:30
-           
+                        Time Left:
+                        <%--<asp:Literal ID="timerLiteral" runat="server"></asp:Literal>--%>
                     </div>
                 </div>
                 <p id="question-text">
+                    <label for="questionText">
                     <asp:Literal ID="questionText" runat="server"></asp:Literal>
+                        </label>
                 </p>
 
                 <div id="options-section">
                     <div class="form-check mb-3">
-                        <input class="form-check-input" type="radio" name="answer" id="option1" runat="server">
+                        <input class="form-check-input" type="radio" name="answer" id="option1" runat="server" value="1">
                         <label class="form-check-label" for="option1">
                             <asp:Literal ID="option1Label" runat="server"></asp:Literal>
                         </label>
                     </div>
                     <div class="form-check mb-3">
-                        <input class="form-check-input" type="radio" name="answer" id="option2" runat="server">
+                        <input class="form-check-input" type="radio" name="answer" id="option2" runat="server" value="2">
                         <label class="form-check-label" for="option2">
                             <asp:Literal ID="option2Label" runat="server"></asp:Literal>
                         </label>
                     </div>
                     <div class="form-check mb-3">
-                        <input class="form-check-input" type="radio" name="answer" id="option3" runat="server">
+                        <input class="form-check-input" type="radio" name="answer" id="option3" runat="server" value="3">
                         <label class="form-check-label" for="option3">
                             <asp:Literal ID="option3Label" runat="server"></asp:Literal>
                         </label>
                     </div>
                     <div class="form-check mb-3">
-                        <input class="form-check-input" type="radio" name="answer" id="option4" runat="server">
+                        <input class="form-check-input" type="radio" name="answer" id="option4" runat="server" value="4">
                         <label class="form-check-label" for="option4">
                             <asp:Literal ID="option4Label" runat="server"></asp:Literal>
                         </label>
                     </div>
                 </div>
 
-
                 <!-- Navigation Button -->
-                <button class="btn mt-3" id="next-button">Next</button>
+                 <asp:Button ID="nextButton" runat="server" Text="Next" CssClass="btn mt-3" OnClick="NextButton_Click" />
             </div>
         </div>
 

@@ -13,6 +13,15 @@ namespace BrainBuilder {
     public partial class Test {
         
         /// <summary>
+        /// questionTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal questionTitle;
+        
+        /// <summary>
         /// questionText control.
         /// </summary>
         /// <remarks>
@@ -92,5 +101,14 @@ namespace BrainBuilder {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal option4Label;
+        
+        /// <summary>
+        /// nextButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button nextButton;
     }
 }

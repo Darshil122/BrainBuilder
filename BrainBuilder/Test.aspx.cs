@@ -14,11 +14,13 @@ namespace BrainBuilder
         {
             if (!IsPostBack)
             {
-                LoadQuestion();
+                ViewState["CurrentQuestionID"] = 1;
+                LoadQuestion(Convert.ToInt32(ViewState["CurrentQuestionID"]));
+                //LoadQuestion();
             }
         }
 
-        private void LoadQuestion()
+        private void LoadQuestion(int questionID)
         {
             // Define your connection string
             string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["BrainBuilderDB"].ConnectionString;
@@ -29,6 +31,7 @@ namespace BrainBuilder
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@QuestionID", questionID);
 
                 try
                 {
@@ -38,15 +41,11 @@ namespace BrainBuilder
                     if (reader.Read())
                     {
                         // Assign the question text and options to the UI
-                        questionTitle.InnerText = "Question " + reader["QuestionID"].ToString();
-                        questionText.InnerText = reader["QuestionText"].ToString();
-                        option1.Value = "1";
+                        questionTitle.Text = "Question " + reader["QuestionID"].ToString();
+                        questionText.Text = reader["QuestionText"].ToString();
                         option1Label.Text = "A. " + reader["Option1"].ToString();
-                        option2.Value = "2";
                         option2Label.Text = "B. " + reader["Option2"].ToString();
-                        option3.Value = "3";
                         option3Label.Text = "C. " + reader["Option3"].ToString();
-                        option4.Value = "4";
                         option4Label.Text = "D. " + reader["Option4"].ToString();
                     }
                 }
@@ -67,12 +66,12 @@ namespace BrainBuilder
             LoadQuestion(currentQuestionID);
         }
 
-        private void LoadQuestion(int questionID)
-        {
-            // Modify the SQL query to fetch a specific question by ID
-            string query = "SELECT * FROM Questions WHERE QuestionID = @QuestionID";
-            // (Same implementation as above, with parameterized query for @QuestionID)
-        }
+        //private void LoadQuestion(int questionID)
+        //{
+        //    // Modify the SQL query to fetch a specific question by ID
+        //    string query = "SELECT * FROM Questions WHERE QuestionID = @QuestionID";
+        //    // (Same implementation as above, with parameterized query for @QuestionID)
+        //}
 
     }
 }

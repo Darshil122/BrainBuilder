@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Data.SqlClient;
-using System.Web.UI.WebControls;
+using System.Web.UI;
+using System.Configuration;
 
 namespace BrainBuilder
 {
@@ -16,7 +13,7 @@ namespace BrainBuilder
             {
                 ViewState["CurrentQuestionID"] = 1;
                 LoadQuestion(Convert.ToInt32(ViewState["CurrentQuestionID"]));
-                //LoadQuestion();
+                UpdateButtonVisibility();
             }
         }
 
@@ -25,8 +22,8 @@ namespace BrainBuilder
             // Define your connection string
             string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["BrainBuilderDB"].ConnectionString;
 
-            // SQL Query to fetch a question (for example, the first question)
-            string query = "SELECT TOP 1 * FROM Questions ORDER BY QuestionID";
+            // SQL Query to fetch a question by QuestionID
+            string query = "SELECT * FROM Questions WHERE QuestionID = @QuestionID";
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -51,27 +48,118 @@ namespace BrainBuilder
                 }
                 catch (Exception ex)
                 {
-                    // Handle exceptions (e.g., log error, show message to user)
+                    // Handle exceptions
                     Response.Write($"<script>alert('Error: {ex.Message}')</script>");
                 }
             }
         }
+
+        private int GetTotalQuestions()
+        {
+            int totalQuestions = 0;
+
+            // Define your connection string
+            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["BrainBuilderDB"].ConnectionString;
+
+            string query = "SELECT COUNT(*) FROM Questions";
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                try
+                {
+                    con.Open();
+                    totalQuestions = (int)cmd.ExecuteScalar();
+                }
+                catch (Exception ex)
+                {
+                    // Handle exceptions (e.g., log error, show message to user)
+                    Response.Write($"<script>alert('Error: {ex.Message}')</script>");
+                }
+            }
+
+            return totalQuestions;
+        }
+
+        private void UpdateButtonVisibility()
+        {
+            int currentQuestionID = Convert.ToInt32(ViewState["CurrentQuestionID"] ?? "1");
+            int totalQuestions = GetTotalQuestions();
+
+            // Hide "Previous" button if it's the first question
+            previousButton.Visible = currentQuestionID > 1;
+
+            // Hide "Next" button if it's the last question
+            nextButton.Visible = currentQuestionID < totalQuestions;
+        }
+
         protected void NextButton_Click(object sender, EventArgs e)
         {
-            // Update ViewState/Session to track question progress
             int currentQuestionID = Convert.ToInt32(ViewState["CurrentQuestionID"] ?? "1");
             currentQuestionID++;
             ViewState["CurrentQuestionID"] = currentQuestionID;
 
             LoadQuestion(currentQuestionID);
+            UpdateButtonVisibility();
         }
 
-        //private void LoadQuestion(int questionID)
+        protected void PreviousButton_Click(object sender, EventArgs e)
+        {
+            int currentQuestionID = Convert.ToInt32(ViewState["CurrentQuestionID"] ?? "1");
+
+            if (currentQuestionID > 1)
+            {
+                currentQuestionID--;
+                ViewState["CurrentQuestionID"] = currentQuestionID;
+
+                LoadQuestion(currentQuestionID);
+            }
+
+            UpdateButtonVisibility();
+        }
+
+        //protected void SubmitAnswer_Click(object sender, EventArgs e)
         //{
-        //    // Modify the SQL query to fetch a specific question by ID
-        //    string query = "SELECT * FROM Questions WHERE QuestionID = @QuestionID";
-        //    // (Same implementation as above, with parameterized query for @QuestionID)
+        //    string selectedOption = Request.Form["answer"];
+        //    int questionID = Convert.ToInt32(ViewState["CurrentQuestionID"]);
+        //    int courseID = Convert.ToInt32(ViewState["CourseID"]);
+        //    int userID = Convert.ToInt32(Session["UserID"] ?? "0");
+
+        //    if (string.IsNullOrEmpty(selectedOption))
+        //    {
+        //        ShowAlert("Please select an answer before submitting!");
+        //        return;
+        //    }
+
+        //    string connectionString = ConfigurationManager.ConnectionStrings["BrainBuilderDB"].ConnectionString;
+        //    string query = @"INSERT INTO UserSubmissions (UserID, CourseID, QuestionID, SelectedOption) 
+        //                     VALUES (@UserID, @CourseID, @QuestionID, @SelectedOption)";
+
+        //    using (SqlConnection con = new SqlConnection(connectionString))
+        //    {
+        //        SqlCommand cmd = new SqlCommand(query, con);
+        //        cmd.Parameters.AddWithValue("@UserID", userID);
+        //        cmd.Parameters.AddWithValue("@CourseID", courseID);
+        //        cmd.Parameters.AddWithValue("@QuestionID", questionID);
+        //        cmd.Parameters.AddWithValue("@SelectedOption", selectedOption);
+
+        //        try
+        //        {
+        //            con.Open();
+        //            cmd.ExecuteNonQuery();
+        //            ShowAlert("Answer submitted successfully!");
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            ShowAlert($"Error: {ex.Message}");
+        //        }
+        //    }
         //}
 
+        //private void ShowAlert(string message)
+        //{
+        //    Response.Write($"<script>alert('{message}');</script>");
+        //}
     }
 }

@@ -28,7 +28,7 @@
             </div>
         </section>
         <!-- Courses area start -->
-        <div class="courses-area section-padding25 fix">
+        <div class="courses-area section-padding35 fix">
             <div class="container mt-5 p-5 bg-white rounded shadow position-relative">
                 <!-- Question Section -->
                 <div id="question-section" class="d-flex justify-content-between align-items-center mb-4">
@@ -42,8 +42,8 @@
                 </div>
                 <p id="question-text">
                     <label for="questionText">
-                    <asp:Literal ID="questionText" runat="server"></asp:Literal>
-                        </label>
+                        <asp:Literal ID="questionText" runat="server"></asp:Literal>
+                    </label>
                 </p>
 
                 <div id="options-section">
@@ -73,8 +73,17 @@
                     </div>
                 </div>
 
-                <!-- Navigation Button -->
-                 <asp:Button ID="nextButton" runat="server" Text="Next" CssClass="btn mt-3" OnClick="NextButton_Click" />
+                <div class="mt-3">
+                    <asp:Button ID="previousButton" runat="server" Text="Previous" CssClass="btn" OnClick="PreviousButton_Click" />
+                    <asp:Button ID="nextButton" runat="server" Text="Next" CssClass="btn" OnClick="NextButton_Click" />
+                </div>
+
+                <!-- Hidden Fields -->
+                <asp:HiddenField ID="currentQuestionID" runat="server" />
+                <asp:HiddenField ID="currentCourseID" runat="server" />
+
+                <!-- Submit Button -->
+                <%--<asp:Button ID="submitButton" runat="server" Text="Submit" CssClass="btn mt-1 ml-5" OnClick="SubmitAnswer_Click" />--%>
             </div>
         </div>
 

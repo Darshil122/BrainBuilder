@@ -20,7 +20,7 @@ namespace BrainBuilder
         private void LoadQuestion(int questionID)
         {
             // Define your connection string
-            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["BrainBuilderDB"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["BrainBuilderDB"].ConnectionString;
 
             // SQL Query to fetch a question by QuestionID
             string query = "SELECT * FROM Questions WHERE QuestionID = @QuestionID";

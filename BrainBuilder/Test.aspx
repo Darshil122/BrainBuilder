@@ -46,7 +46,10 @@
                     </label>
                 </p>
 
-                <div id="options-section">
+                <div id="current-question-section">
+                    <h5 id="H1" runat="server"></h5>
+                    <p id="P1" runat="server"></p>
+
                     <div class="form-check mb-3">
                         <input class="form-check-input" type="radio" name="answer" id="option1" runat="server" value="1">
                         <label class="form-check-label" for="option1">

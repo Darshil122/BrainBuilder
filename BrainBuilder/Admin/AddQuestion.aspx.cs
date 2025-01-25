@@ -12,6 +12,40 @@ namespace BrainBuilder.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                LoadCourses();
+            }
+        }
+
+        private void LoadCourses()
+        {
+            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["BrainBuilderDB"].ConnectionString;
+
+            string query = "SELECT CourseID, CourseName FROM Courses";
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                try
+                {
+                    con.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    ddlCourses.DataSource = reader;
+                    ddlCourses.DataTextField = "CourseName"; // Display course names
+                    ddlCourses.DataValueField = "CourseID"; // Use CourseID as the value
+                    ddlCourses.DataBind();
+
+                    // Optionally add a default "Select a course" option
+                    ddlCourses.Items.Insert(0, new ListItem("-- Select a Course --", ""));
+                }
+                catch (Exception ex)
+                {
+                    Response.Write($"<script>alert('Error loading courses: {ex.Message}');</script>");
+                }
+            }
         }
 
         protected void AddQuestion_Click(object sender, EventArgs e)
@@ -23,22 +57,23 @@ namespace BrainBuilder.Admin
             string opt3 = option3.Value;
             string opt4 = option4.Value;
             string correctOpt = correctOption.Value;
+            string courseID = ddlCourses.SelectedValue;
 
+            // Validate the inputs
             if (string.IsNullOrWhiteSpace(question) || string.IsNullOrWhiteSpace(opt1) ||
-            string.IsNullOrWhiteSpace(opt2) || string.IsNullOrWhiteSpace(opt3) || string.IsNullOrWhiteSpace(opt4) ||
-            string.IsNullOrWhiteSpace(correctOpt))
+                string.IsNullOrWhiteSpace(opt2) || string.IsNullOrWhiteSpace(opt3) || string.IsNullOrWhiteSpace(opt4) ||
+                string.IsNullOrWhiteSpace(correctOpt) || string.IsNullOrWhiteSpace(courseID))
             {
-                Response.Write("<script>alert('Please fill in all fields.');</script>");
+                Response.Write("<script>alert('Please fill in all fields and select a course.');</script>");
                 return;
             }
-
 
             // Define your connection string
             string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["BrainBuilderDB"].ConnectionString;
 
             // SQL query to insert the question
-            string query = @"INSERT INTO Questions (QuestionText, Option1, Option2, Option3, Option4, CorrectOption) 
-                             VALUES (@QuestionText, @Option1, @Option2, @Option3, @Option4, @CorrectOption)";
+            string query = @"INSERT INTO Questions (QuestionText, Option1, Option2, Option3, Option4, CorrectOption, CourseID) 
+                     VALUES (@QuestionText, @Option1, @Option2, @Option3, @Option4, @CorrectOption, @CourseID)";
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -49,6 +84,7 @@ namespace BrainBuilder.Admin
                 cmd.Parameters.AddWithValue("@Option3", opt3);
                 cmd.Parameters.AddWithValue("@Option4", opt4);
                 cmd.Parameters.AddWithValue("@CorrectOption", correctOpt);
+                cmd.Parameters.AddWithValue("@CourseID", courseID);
 
                 try
                 {
@@ -62,5 +98,6 @@ namespace BrainBuilder.Admin
                 }
             }
         }
+
     }
 }

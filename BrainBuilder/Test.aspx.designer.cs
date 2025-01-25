@@ -31,24 +31,6 @@ namespace BrainBuilder {
         protected global::System.Web.UI.WebControls.Literal questionText;
         
         /// <summary>
-        /// H1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl H1;
-        
-        /// <summary>
-        /// P1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl P1;
-        
-        /// <summary>
         /// option1 control.
         /// </summary>
         /// <remarks>
@@ -137,23 +119,5 @@ namespace BrainBuilder {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button nextButton;
-        
-        /// <summary>
-        /// currentQuestionID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField currentQuestionID;
-        
-        /// <summary>
-        /// currentCourseID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField currentCourseID;
     }
 }

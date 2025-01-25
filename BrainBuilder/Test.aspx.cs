@@ -59,7 +59,7 @@ namespace BrainBuilder
             int totalQuestions = 0;
 
             // Define your connection string
-            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["BrainBuilderDB"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["BrainBuilderDB"].ConnectionString;
 
             string query = "SELECT COUNT(*) FROM Questions";
 
@@ -118,48 +118,5 @@ namespace BrainBuilder
 
             UpdateButtonVisibility();
         }
-
-        //protected void SubmitAnswer_Click(object sender, EventArgs e)
-        //{
-        //    string selectedOption = Request.Form["answer"];
-        //    int questionID = Convert.ToInt32(ViewState["CurrentQuestionID"]);
-        //    int courseID = Convert.ToInt32(ViewState["CourseID"]);
-        //    int userID = Convert.ToInt32(Session["UserID"] ?? "0");
-
-        //    if (string.IsNullOrEmpty(selectedOption))
-        //    {
-        //        ShowAlert("Please select an answer before submitting!");
-        //        return;
-        //    }
-
-        //    string connectionString = ConfigurationManager.ConnectionStrings["BrainBuilderDB"].ConnectionString;
-        //    string query = @"INSERT INTO UserSubmissions (UserID, CourseID, QuestionID, SelectedOption) 
-        //                     VALUES (@UserID, @CourseID, @QuestionID, @SelectedOption)";
-
-        //    using (SqlConnection con = new SqlConnection(connectionString))
-        //    {
-        //        SqlCommand cmd = new SqlCommand(query, con);
-        //        cmd.Parameters.AddWithValue("@UserID", userID);
-        //        cmd.Parameters.AddWithValue("@CourseID", courseID);
-        //        cmd.Parameters.AddWithValue("@QuestionID", questionID);
-        //        cmd.Parameters.AddWithValue("@SelectedOption", selectedOption);
-
-        //        try
-        //        {
-        //            con.Open();
-        //            cmd.ExecuteNonQuery();
-        //            ShowAlert("Answer submitted successfully!");
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            ShowAlert($"Error: {ex.Message}");
-        //        }
-        //    }
-        //}
-
-        //private void ShowAlert(string message)
-        //{
-        //    Response.Write($"<script>alert('{message}');</script>");
-        //}
     }
 }

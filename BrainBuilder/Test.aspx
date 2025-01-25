@@ -47,8 +47,6 @@
                 </p>
 
                 <div id="current-question-section">
-                    <h5 id="H1" runat="server"></h5>
-                    <p id="P1" runat="server"></p>
 
                     <div class="form-check mb-3">
                         <input class="form-check-input" type="radio" name="answer" id="option1" runat="server" value="1">
@@ -79,11 +77,7 @@
                 <div class="mt-3">
                     <asp:Button ID="previousButton" runat="server" Text="Previous" CssClass="btn" OnClick="PreviousButton_Click" />
                     <asp:Button ID="nextButton" runat="server" Text="Next" CssClass="btn" OnClick="NextButton_Click" />
-                </div>
-
-                <!-- Hidden Fields -->
-                <asp:HiddenField ID="currentQuestionID" runat="server" />
-                <asp:HiddenField ID="currentCourseID" runat="server" />
+                </div
 
                 <!-- Submit Button -->
                 <%--<asp:Button ID="submitButton" runat="server" Text="Submit" CssClass="btn mt-1 ml-5" OnClick="SubmitAnswer_Click" />--%>

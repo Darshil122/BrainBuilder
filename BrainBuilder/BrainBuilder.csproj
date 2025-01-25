@@ -74,6 +74,65 @@
     <Content Include="Account\Logout.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Admin\AddQuestion.aspx" />
+    <Content Include="Admin\assets\css\cs-skin-elastic.css" />
+    <Content Include="Admin\assets\css\lib\chosen\chosen-sprite%402x.png" />
+    <Content Include="Admin\assets\css\lib\chosen\chosen-sprite.png" />
+    <Content Include="Admin\assets\css\lib\chosen\chosen.css" />
+    <Content Include="Admin\assets\css\lib\chosen\chosen.min.css" />
+    <Content Include="Admin\assets\css\lib\datatable\buttons.bootstrap.min.css" />
+    <Content Include="Admin\assets\css\lib\datatable\buttons.dataTables.min.css" />
+    <Content Include="Admin\assets\css\lib\datatable\dataTables.bootstrap.min.css" />
+    <Content Include="Admin\assets\css\lib\vector-map\jqvmap.min.css" />
+    <Content Include="Admin\assets\css\style.css" />
+    <Content Include="Admin\assets\fonts\icomoon\icomoon.svg" />
+    <Content Include="Admin\assets\fonts\icomoon\index.html" />
+    <Content Include="Admin\images\.gitignore" />
+    <Content Include="Admin\images\admin.jpg" />
+    <Content Include="Admin\images\avatar\1.jpg" />
+    <Content Include="Admin\images\avatar\2.jpg" />
+    <Content Include="Admin\images\avatar\3.jpg" />
+    <Content Include="Admin\images\avatar\4.jpg" />
+    <Content Include="Admin\images\avatar\5.jpg" />
+    <Content Include="Admin\images\avatar\6.jpg" />
+    <Content Include="Admin\images\avatar\64-1.jpg" />
+    <Content Include="Admin\images\avatar\64-2.jpg" />
+    <Content Include="Admin\images\favicon.png" />
+    <Content Include="Admin\images\logo.png" />
+    <Content Include="Admin\images\logo2.png" />
+    <Content Include="Admin\assets\js\dashboard.js" />
+    <Content Include="Admin\assets\js\init\chartjs-init.js" />
+    <Content Include="Admin\assets\js\init\datatables-init.js" />
+    <Content Include="Admin\assets\js\init\flot-chart-init.js" />
+    <Content Include="Admin\assets\js\init\fullcalendar-init.js" />
+    <Content Include="Admin\assets\js\init\gmap-init.js" />
+    <Content Include="Admin\assets\js\init\peitychart-init.js" />
+    <Content Include="Admin\assets\js\init\vector-init.js" />
+    <Content Include="Admin\assets\js\init\weather-init.js" />
+    <Content Include="Admin\assets\js\lib\chosen\chosen.jquery.js" />
+    <Content Include="Admin\assets\js\lib\chosen\chosen.jquery.min.js" />
+    <Content Include="Admin\assets\js\lib\chosen\chosen.proto.js" />
+    <Content Include="Admin\assets\js\lib\chosen\chosen.proto.min.js" />
+    <Content Include="Admin\assets\js\lib\data-table\buttons.bootstrap.min.js" />
+    <Content Include="Admin\assets\js\lib\data-table\buttons.colVis.min.js" />
+    <Content Include="Admin\assets\js\lib\data-table\buttons.flash.min.js" />
+    <Content Include="Admin\assets\js\lib\data-table\buttons.html5.min.js" />
+    <Content Include="Admin\assets\js\lib\data-table\buttons.print.min.js" />
+    <Content Include="Admin\assets\js\lib\data-table\dataTables.bootstrap.min.js" />
+    <Content Include="Admin\assets\js\lib\data-table\dataTables.buttons.min.js" />
+    <Content Include="Admin\assets\js\lib\data-table\datatables.min.js" />
+    <Content Include="Admin\assets\js\lib\data-table\jquery-1.12.4.js" />
+    <Content Include="Admin\assets\js\lib\data-table\jquery.dataTables.min.js" />
+    <Content Include="Admin\assets\js\lib\data-table\jszip.min.js" />
+    <Content Include="Admin\assets\js\lib\data-table\pdfmake.min.js" />
+    <Content Include="Admin\assets\js\lib\data-table\vfs_fonts.js" />
+    <Content Include="Admin\assets\js\lib\gmap\gmapApi.js" />
+    <Content Include="Admin\assets\js\lib\gmap\gmaps.js" />
+    <Content Include="Admin\assets\js\lib\gmap\gmaps.min.js" />
+    <Content Include="Admin\assets\js\main.js" />
+    <Content Include="Admin\assets\js\vmap.sampledata.js" />
+    <Content Include="Admin\assets\js\widgets.js" />
+    <Content Include="Admin\assets\scss\style.css" />
+    <Content Include="Admin\Dashboard.aspx" />
     <Content Include="assets\css\animate.min.css" />
     <Content Include="assets\css\animated-headline.css" />
     <Content Include="assets\css\bootstrap.min.css" />
@@ -194,6 +253,14 @@
     <Content Include="assets\scss\_wantTowork.scss" />
     <Content Include="assets\css\style.map" />
     <Content Include="Courses.aspx" />
+    <Content Include="Admin\AdminMaster.Master" />
+    <Content Include="Admin\assets\css\style.css.map" />
+    <Content Include="Admin\assets\fonts\icomoon\icomoon.eot" />
+    <Content Include="Admin\assets\fonts\icomoon\icomoon.ttf" />
+    <Content Include="Admin\assets\fonts\icomoon\icomoon.woff" />
+    <Content Include="Admin\assets\scss\style.css.map" />
+    <Content Include="Admin\assets\scss\style.scss" />
+    <Content Include="Admin\images\logo.psd" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -348,6 +415,20 @@
     </Compile>
     <Compile Include="Admin\AddQuestion.aspx.designer.cs">
       <DependentUpon>AddQuestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminMaster.Master.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminMaster.Master.designer.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="azure-data-engineer.aspx.cs">
       <DependentUpon>azure-data-engineer.aspx</DependentUpon>

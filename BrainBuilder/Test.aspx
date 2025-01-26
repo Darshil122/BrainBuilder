@@ -77,10 +77,10 @@
                 <div class="mt-3">
                     <asp:Button ID="previousButton" runat="server" Text="Previous" CssClass="btn" OnClick="PreviousButton_Click" />
                     <asp:Button ID="nextButton" runat="server" Text="Next" CssClass="btn" OnClick="NextButton_Click" />
-                </div
+                    <!-- Submit Button -->
+                    <asp:Button ID="submitButton" runat="server" Text="Submit" CssClass="btn btn-success mt-2" OnClick="SubmitButton_Click" Visible="false" />
+                </div>
 
-                <!-- Submit Button -->
-                <%--<asp:Button ID="submitButton" runat="server" Text="Submit" CssClass="btn mt-1 ml-5" OnClick="SubmitAnswer_Click" />--%>
             </div>
         </div>
 

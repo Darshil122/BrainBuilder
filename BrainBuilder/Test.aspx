@@ -78,7 +78,7 @@
                     <asp:Button ID="previousButton" runat="server" Text="Previous" CssClass="btn" OnClick="PreviousButton_Click" />
                     <asp:Button ID="nextButton" runat="server" Text="Next" CssClass="btn" OnClick="NextButton_Click" />
                     <!-- Submit Button -->
-                    <asp:Button ID="submitButton" runat="server" Text="Submit" CssClass="btn btn-success mt-2" OnClick="SubmitButton_Click" Visible="false" />
+                    <%--<asp:Button ID="submitButton" runat="server" Text="Submit" CssClass="btn btn-success mt-2" OnClick="SubmitButton_Click" Visible="false" />--%>
                 </div>
 
             </div>

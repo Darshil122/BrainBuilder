@@ -72,7 +72,6 @@ namespace BrainBuilder
                 }
                 catch (Exception ex)
                 {
-                    // Handle exceptions (e.g., log error, show message to user)
                     Response.Write($"<script>alert('Error: {ex.Message}')</script>");
                 }
             }
@@ -85,10 +84,8 @@ namespace BrainBuilder
             int currentQuestionID = Convert.ToInt32(ViewState["CurrentQuestionID"] ?? "1");
             int totalQuestions = GetTotalQuestions();
 
-            // Hide "Previous" button if it's the first question
             previousButton.Visible = currentQuestionID > 1;
 
-            // Hide "Next" button if it's the last question
             nextButton.Visible = currentQuestionID < totalQuestions;
             //submitButton.Visible = true;
         }
@@ -126,7 +123,6 @@ namespace BrainBuilder
             if (!string.IsNullOrEmpty(selectedAnswer))
             {
                 SaveAnswer(currentQuestionID, selectedAnswer);
-                Response.Write("<script>alert('Answer submitted successfully!')</script>");
             }
             else
             {
@@ -147,7 +143,7 @@ namespace BrainBuilder
             int userID = Convert.ToInt32(Session["UserID"]);
 
             string connectionString = ConfigurationManager.ConnectionStrings["BrainBuilderDB"].ConnectionString;
-            string query = "INSERT INTO UserSubmissions (UserID, QuestionID, SelectedOption) VALUES (@UserID, @QuestionID, @SelectedAnswer)";
+            string query = "INSERT INTO UserAnswer (UserID, QuestionID, SelectedOption) VALUES (@UserID, @QuestionID, @SelectedAnswer)";
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {

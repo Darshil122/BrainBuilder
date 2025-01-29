@@ -42,12 +42,12 @@
                         <div class="properties properties2 mb-30">
                             <div class="properties__card">
                                 <div class="properties__img overlay1">
-                                    <a href="#">
+                                    <a href="software-development.aspx">
                                         <img height="180px" src="assets/img/gallery/softwareDev.png" /></a>
                                 </div>
                                 <div class="properties__caption">
                                     <%--<p>User Experience</p>--%>
-                                    <h3><a href="#">Software development</a></h3>
+                                    <h3><a href="software-development.aspx">Software development</a></h3>
                                     <p>
                                         The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.
                                     </p>
@@ -79,12 +79,12 @@
                         <div class="properties properties2 mb-30">
                             <div class="properties__card">
                                 <div class="properties__img overlay1">
-                                    <a href="#">
+                                    <a href="machine-learning.aspx">
                                         <img height="180px" src="assets/img/gallery/machine.png" /></a>
                                 </div>
                                 <div class="properties__caption">
                                     <%--<p>User Experience</p>--%>
-                                    <h3><a href="#">Machine learning</a></h3>
+                                    <h3><a href="machine-learning.aspx">Machine learning</a></h3>
                                     <p>
                                         The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.
                                         
@@ -118,12 +118,12 @@
                         <div class="properties properties2 mb-30">
                             <div class="properties__card">
                                 <div class="properties__img overlay1">
-                                    <a href="#">
+                                    <a href="generative-ai.aspx">
                                         <img height="180px" src="assets/img/gallery/Generative_AI.png" /></a>
                                 </div>
                                 <div class="properties__caption">
                                     <%--<p>User Experience</p>--%>
-                                    <h3><a href="#">Generative AI</a></h3>
+                                    <h3><a href="generative-ai.aspx">Generative AI</a></h3>
                                     <p>
                                         The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.
                                         
@@ -157,12 +157,12 @@
                         <div class="properties properties2 mb-30">
                             <div class="properties__card">
                                 <div class="properties__img overlay1">
-                                    <a href="#">
+                                    <a href="data-science.aspx">
                                         <img height="180px" src="assets/img/gallery/DataSci.png" /></a>
                                 </div>
                                 <div class="properties__caption">
                                     <%--<p>User Experience</p>--%>
-                                    <h3><a href="#">Data Science</a></h3>
+                                    <h3><a href="data-science.aspx">Data Science</a></h3>
                                     <p>
                                         The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.
                                         
@@ -196,12 +196,12 @@
                         <div class="properties properties2 mb-30">
                             <div class="properties__card">
                                 <div class="properties__img overlay1">
-                                    <a href="#">
+                                    <a href="cloud-computing.aspx">
                                         <img height="180px" src="assets/img/gallery/cloud-computing.png" /></a>
                                 </div>
                                 <div class="properties__caption">
                                     <%--<p>User Experience</p>--%>
-                                    <h3><a href="#">Cloud Computing</a></h3>
+                                    <h3><a href="cloud-computing.aspx">Cloud Computing</a></h3>
                                     <p>
                                         The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.
                                         
@@ -235,12 +235,12 @@
                         <div class="properties properties2 mb-30">
                             <div class="properties__card">
                                 <div class="properties__img overlay1">
-                                    <a href="#">
+                                    <a href="azure-data-engineer.aspx">
                                         <img height="180px" src="assets/img/gallery/azure_data_engineer.png" /></a>
                                 </div>
                                 <div class="properties__caption">
                                     <%--<p>User Experience</p>--%>
-                                    <h3><a href="#">Azure Data Engineer</a></h3>
+                                    <h3><a href="azure-data-engineer.aspx">Azure Data Engineer</a></h3>
                                     <p>
                                         The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.
                                     </p>
@@ -272,12 +272,12 @@
                         <div class="properties properties2 mb-30">
                             <div class="properties__card">
                                 <div class="properties__img overlay1">
-                                    <a href="#">
+                                    <a href="devops.aspx">
                                         <img height="180px" src="assets/img/gallery/devops.png" /></a>
                                 </div>
                                 <div class="properties__caption">
                                     <%--<p>User Experience</p>--%>
-                                    <h3><a href="#">DevOps</a></h3>
+                                    <h3><a href="devops.aspx">DevOps</a></h3>
                                     <p>
                                         The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.
                                     </p>
@@ -309,12 +309,12 @@
                         <div class="properties properties2 mb-30">
                             <div class="properties__card">
                                 <div class="properties__img overlay1">
-                                    <a href="#">
+                                    <a href="blockchain.aspx">
                                         <img height="180px" src="assets/img/gallery/Blockchain.png" /></a>
                                 </div>
                                 <div class="properties__caption">
                                     <%--<p>User Experience</p>--%>
-                                    <h3><a href="#">Blockchain</a></h3>
+                                    <h3><a href="blockchain.aspx">Blockchain</a></h3>
                                     <p>
                                         The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.
                                     </p>

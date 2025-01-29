@@ -114,13 +114,13 @@
                                         <div class="footer-tittle">
                                             <h4>Technologies</h4>
                                             <ul>
-                                                <li><a href="#">Software Devlopment</a></li>
-                                                <li><a href="#">Machine Learning</a></li>
-                                                <li><a href="#">Generative Ai</a></li>
-                                                <li><a href="#">Data Science</a></li>
-                                                <li><a href="#">Cloud Computing</a></li>
-                                                <li><a href="#">Azure Data Engineer</a></li>
-                                                <li><a href="#">DevOps</a></li>
+                                                <li><a href="software-development.aspx">Software Devlopment</a></li>
+                                                <li><a href="machine-learning.aspx">Machine Learning</a></li>
+                                                <li><a href="generative-ai.aspx">Generative Ai</a></li>
+                                                <li><a href="data-science.aspx">Data Science</a></li>
+                                                <li><a href="cloud-computing.aspx">Cloud Computing</a></li>
+                                                <li><a href="azure-data-engineer.aspx">Azure Data Engineer</a></li>
+                                                <li><a href="devops.aspx">DevOps</a></li>
                                                 <li><a href="#">Blockchain</a></li>
                                             </ul>
                                         </div>

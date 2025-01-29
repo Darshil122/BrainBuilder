@@ -19,10 +19,10 @@ namespace BrainBuilder
 
         private void LoadQuestion(int questionID)
         {
-            // Define your connection string
-            string connectionString = ConfigurationManager.ConnectionStrings["BrainBuilderDB"].ConnectionString;
+            // Clear previous selection
+            answerOptions.ClearSelection();
 
-            // SQL Query to fetch a question by QuestionID
+            string connectionString = ConfigurationManager.ConnectionStrings["BrainBuilderDB"].ConnectionString;
             string query = "SELECT * FROM Questions WHERE QuestionID = @QuestionID";
 
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -37,18 +37,16 @@ namespace BrainBuilder
 
                     if (reader.Read())
                     {
-                        // Assign the question text and options to the UI
                         questionTitle.Text = "Question " + reader["QuestionID"].ToString();
                         questionText.Text = reader["QuestionText"].ToString();
-                        option1Label.Text = "A. " + reader["Option1"].ToString();
-                        option2Label.Text = "B. " + reader["Option2"].ToString();
-                        option3Label.Text = "C. " + reader["Option3"].ToString();
-                        option4Label.Text = "D. " + reader["Option4"].ToString();
+                        answerOptions.Items[0].Text = "A. " + reader["Option1"].ToString();
+                        answerOptions.Items[1].Text = "B. " + reader["Option2"].ToString();
+                        answerOptions.Items[2].Text = "C. " + reader["Option3"].ToString();
+                        answerOptions.Items[3].Text = "D. " + reader["Option4"].ToString();
                     }
                 }
                 catch (Exception ex)
                 {
-                    // Handle exceptions
                     Response.Write($"<script>alert('Error: {ex.Message}')</script>");
                 }
             }
@@ -92,6 +90,7 @@ namespace BrainBuilder
 
             // Hide "Next" button if it's the last question
             nextButton.Visible = currentQuestionID < totalQuestions;
+            //submitButton.Visible = true;
         }
 
         protected void NextButton_Click(object sender, EventArgs e)
@@ -103,7 +102,6 @@ namespace BrainBuilder
             LoadQuestion(currentQuestionID);
             UpdateButtonVisibility();
         }
-
 
         protected void PreviousButton_Click(object sender, EventArgs e)
         {
@@ -120,5 +118,66 @@ namespace BrainBuilder
             UpdateButtonVisibility();
         }
 
+        protected void SubmitButton_Click(object sender, EventArgs e)
+        {
+            int currentQuestionID = Convert.ToInt32(ViewState["CurrentQuestionID"] ?? "1");
+            string selectedAnswer = answerOptions.SelectedValue;
+
+            if (!string.IsNullOrEmpty(selectedAnswer))
+            {
+                SaveAnswer(currentQuestionID, selectedAnswer);
+                Response.Write("<script>alert('Answer submitted successfully!')</script>");
+            }
+            else
+            {
+                Response.Write("<script>alert('Please select an answer!')</script>");
+            }
+        }
+
+        private void SaveAnswer(int questionID, string selectedAnswer)
+        {
+            // Fetch UserID from session
+            if (Session["UserID"] == null)
+            {
+                //Response.Write("<script>alert('User not logged in.')</script>");
+                Response.Redirect("~/Account/Login.aspx");
+                //return;
+            }
+
+            int userID = Convert.ToInt32(Session["UserID"]);
+
+            string connectionString = ConfigurationManager.ConnectionStrings["BrainBuilderDB"].ConnectionString;
+            string query = "INSERT INTO UserSubmissions (UserID, QuestionID, SelectedOption) VALUES (@UserID, @QuestionID, @SelectedAnswer)";
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@UserID", userID); // Add UserID parameter
+                cmd.Parameters.AddWithValue("@QuestionID", questionID);
+                cmd.Parameters.AddWithValue("@SelectedAnswer", selectedAnswer);
+
+                try
+                {
+                    con.Open();
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        Response.Write("<script>alert('Answer saved successfully!')</script>");
+                    }
+                    else
+                    {
+                        Response.Write("<script>alert('Failed to save answer.')</script>");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Log the error and display a user-friendly message
+                    Response.Write($"<script>alert('Error: {ex.Message}')</script>");
+                    // Log the exception for debugging
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+            }
+        }
     }
 }

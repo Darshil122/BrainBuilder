@@ -32,51 +32,27 @@
             <div class="container mt-5 p-5 bg-white rounded shadow position-relative">
                 <!-- Question Section -->
                 <div id="question-section" class="d-flex justify-content-between align-items-center mb-4">
-                    <h3 class="fw-bold" id="question-title">
-                        <label class="" for="questionID">
-                            <asp:Literal ID="questionTitle" runat="server"></asp:Literal></label></h3>
+                    <asp:Label ID="questionTitle" runat="server" Text="Question"></asp:Label>
                     <div class="text-danger fw-bold" id="timer">
                         Time Left:
                         <%--<asp:Literal ID="timerLiteral" runat="server"></asp:Literal>--%>
                     </div>
                 </div>
-                <p id="question-text">
-                    <label for="questionText">
-                        <asp:Literal ID="questionText" runat="server"></asp:Literal>
-                    </label>
-                </p>
+                <asp:Label ID="questionText" runat="server" Text="Question Text"></asp:Label>
 
-                <div id="current-question-section">
-
-                    <div class="form-check mb-3">
-                        <input class="form-check-input" type="radio" name="answer" id="option1" runat="server" value="1">
-                        <label class="form-check-label" for="option1">
-                            <asp:Literal ID="option1Label" runat="server"></asp:Literal>
-                        </label>
-                    </div>
-                    <div class="form-check mb-3">
-                        <input class="form-check-input" type="radio" name="answer" id="option2" runat="server" value="2">
-                        <label class="form-check-label" for="option2">
-                            <asp:Literal ID="option2Label" runat="server"></asp:Literal>
-                        </label>
-                    </div>
-                    <div class="form-check mb-3">
-                        <input class="form-check-input" type="radio" name="answer" id="option3" runat="server" value="3">
-                        <label class="form-check-label" for="option3">
-                            <asp:Literal ID="option3Label" runat="server"></asp:Literal>
-                        </label>
-                    </div>
-                    <div class="form-check mb-3">
-                        <input class="form-check-input" type="radio" name="answer" id="option4" runat="server" value="4">
-                        <label class="form-check-label" for="option4">
-                            <asp:Literal ID="option4Label" runat="server"></asp:Literal>
-                        </label>
-                    </div>
-                </div>
+                <br />
+<asp:RadioButtonList ID="answerOptions" runat="server">
+    <asp:ListItem Text="A. Option 1" Value="1"></asp:ListItem>
+    <asp:ListItem Text="B. Option 2" Value="2"></asp:ListItem>
+    <asp:ListItem Text="C. Option 3" Value="3"></asp:ListItem>
+    <asp:ListItem Text="D. Option 4" Value="4"></asp:ListItem>
+</asp:RadioButtonList>
 
                 <div class="mt-3">
                     <asp:Button ID="previousButton" runat="server" Text="Previous" CssClass="btn" OnClick="PreviousButton_Click" />
                     <asp:Button ID="nextButton" runat="server" Text="Next" CssClass="btn" OnClick="NextButton_Click" />
+
+                    <asp:Button ID="submitButton" runat="server" class="mt-2" Text="Submit Answer" OnClick="SubmitButton_Click" />
                     <!-- Submit Button -->
                     <%--<asp:Button ID="submitButton" runat="server" Text="Submit" CssClass="btn btn-success mt-2" OnClick="SubmitButton_Click" Visible="false" />--%>
                 </div>

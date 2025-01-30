@@ -375,6 +375,7 @@
     <Content Include="assets\img\post\post_8.png" />
     <Content Include="assets\img\post\post_9.png" />
     <Content Include="assets\img\post\preview.png" />
+    <Content Include="Result.aspx" />
     <Content Include="software-development.aspx" />
     <Content Include="Test.aspx" />
     <Content Include="Web.config" />
@@ -507,6 +508,13 @@
     </Compile>
     <Compile Include="Courses.aspx.designer.cs">
       <DependentUpon>Courses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Result.aspx.cs">
+      <DependentUpon>Result.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Result.aspx.designer.cs">
+      <DependentUpon>Result.aspx</DependentUpon>
     </Compile>
     <Compile Include="software-development.aspx.cs">
       <DependentUpon>software-development.aspx</DependentUpon>

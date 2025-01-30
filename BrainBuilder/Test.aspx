@@ -49,12 +49,14 @@
 </asp:RadioButtonList>
 
                 <div class="mt-3">
-                    <asp:Button ID="previousButton" runat="server" Text="Previous" CssClass="btn" OnClick="PreviousButton_Click" />
+                    <%--<asp:Button ID="previousButton" runat="server" Text="Previous" CssClass="btn" OnClick="PreviousButton_Click" />--%>
                     <asp:Button ID="nextButton" runat="server" Text="Next" CssClass="btn" OnClick="NextButton_Click" />
 
-                    <asp:Button ID="submitButton" runat="server" class="mt-2" Text="Submit Answer" OnClick="SubmitButton_Click" />
                     <!-- Submit Button -->
-                    <%--<asp:Button ID="submitButton" runat="server" Text="Submit" CssClass="btn btn-success mt-2" OnClick="SubmitButton_Click" Visible="false" />--%>
+                    <asp:Button ID="submitButton" runat="server" class="btn" Text="Submit Answer" OnClick="SubmitButton_Click" />
+
+                    <%--Finish Button--%>
+                    <asp:Button ID="finishButton" runat="server" Text="Finish" OnClick="FinishButton_Click" CssClass="btn btn-primary" />
                 </div>
 
             </div>

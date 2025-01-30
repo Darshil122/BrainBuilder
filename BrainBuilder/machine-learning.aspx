@@ -65,7 +65,7 @@
             <p>At Brain Builder, we specialize in delivering tailored software solutions that cater to diverse industries. Our team of skilled developers focuses on creating robust, scalable, and secure applications that align with your goals.</p>
         </div>
         <div>
-            <a href="Test.aspx" class="btn">Start Test</a>
+            <a href="Test.aspx?CourseID=2" class="btn">Start Test</a>
         </div>
     </div>
 </div>

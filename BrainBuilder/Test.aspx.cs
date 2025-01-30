@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using System.Web.UI;
 using System.Configuration;
+using System.Data;
 
 namespace BrainBuilder
 {
@@ -84,10 +85,10 @@ namespace BrainBuilder
             int currentQuestionID = Convert.ToInt32(ViewState["CurrentQuestionID"] ?? "1");
             int totalQuestions = GetTotalQuestions();
 
-            previousButton.Visible = currentQuestionID > 1;
+            //previousButton.Visible = currentQuestionID > 1;
 
             nextButton.Visible = currentQuestionID < totalQuestions;
-            //submitButton.Visible = true;
+            submitButton.Visible = true;
         }
 
         protected void NextButton_Click(object sender, EventArgs e)
@@ -100,20 +101,20 @@ namespace BrainBuilder
             UpdateButtonVisibility();
         }
 
-        protected void PreviousButton_Click(object sender, EventArgs e)
-        {
-            int currentQuestionID = Convert.ToInt32(ViewState["CurrentQuestionID"] ?? "1");
+        //protected void PreviousButton_Click(object sender, EventArgs e)
+        //{
+        //    int currentQuestionID = Convert.ToInt32(ViewState["CurrentQuestionID"] ?? "1");
 
-            if (currentQuestionID > 1)
-            {
-                currentQuestionID--;
-                ViewState["CurrentQuestionID"] = currentQuestionID;
+        //    if (currentQuestionID > 1)
+        //    {
+        //        currentQuestionID--;
+        //        ViewState["CurrentQuestionID"] = currentQuestionID;
 
-                LoadQuestion(currentQuestionID);
-            }
+        //        LoadQuestion(currentQuestionID);
+        //    }
 
-            UpdateButtonVisibility();
-        }
+        //    UpdateButtonVisibility();
+        //}
 
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
@@ -135,20 +136,29 @@ namespace BrainBuilder
             // Fetch UserID from session
             if (Session["UserID"] == null)
             {
-                //Response.Write("<script>alert('User not logged in.')</script>");
                 Response.Redirect("~/Account/Login.aspx");
-                //return;
+                return;
             }
 
             int userID = Convert.ToInt32(Session["UserID"]);
 
+            // Fetch CourseID from query string
+            if (string.IsNullOrEmpty(Request.QueryString["CourseID"]))
+            {
+                Response.Write("<script>alert('CourseID is missing in the query string.')</script>");
+                return;
+            }
+
+            int courseID = Convert.ToInt32(Request.QueryString["CourseID"]);
+
             string connectionString = ConfigurationManager.ConnectionStrings["BrainBuilderDB"].ConnectionString;
-            string query = "INSERT INTO UserAnswer (UserID, QuestionID, SelectedOption) VALUES (@UserID, @QuestionID, @SelectedAnswer)";
+            string query = "INSERT INTO UserSubmissions (UserID, CourseID, QuestionID, SelectedOption) VALUES (@UserID, @CourseID, @QuestionID, @SelectedAnswer)";
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 SqlCommand cmd = new SqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@UserID", userID); // Add UserID parameter
+                cmd.Parameters.AddWithValue("@UserID", userID);
+                cmd.Parameters.AddWithValue("@CourseID", courseID); // Add CourseID parameter
                 cmd.Parameters.AddWithValue("@QuestionID", questionID);
                 cmd.Parameters.AddWithValue("@SelectedAnswer", selectedAnswer);
 
@@ -168,12 +178,100 @@ namespace BrainBuilder
                 }
                 catch (Exception ex)
                 {
-                    // Log the error and display a user-friendly message
                     Response.Write($"<script>alert('Error: {ex.Message}')</script>");
-                    // Log the exception for debugging
                     Console.WriteLine("Error: " + ex.Message);
                 }
             }
         }
+
+        protected void FinishButton_Click(object sender, EventArgs e)
+        {
+            // Fetch UserID from session
+            if (Session["UserID"] == null)
+            {
+                Response.Redirect("~/Account/Login.aspx");
+                return;
+            }
+
+            int userID = Convert.ToInt32(Session["UserID"]);
+
+            // Fetch all user submissions from the database
+            DataTable userSubmissions = GetUserSubmissions(userID);
+
+            // Fetch all correct answers from the database
+            DataTable correctAnswers = GetCorrectAnswers();
+
+            // Calculate the score
+            int totalQuestions = correctAnswers.Rows.Count;
+            int correctCount = 0;
+
+            foreach (DataRow userRow in userSubmissions.Rows)
+            {
+                int questionID = Convert.ToInt32(userRow["QuestionID"]);
+                string selectedAnswer = userRow["SelectedOption"].ToString();
+
+                // Find the correct answer for this question
+                DataRow[] correctRow = correctAnswers.Select($"QuestionID = {questionID}");
+                if (correctRow.Length > 0)
+                {
+                    string correctAnswer = correctRow[0]["CorrectAnswer"].ToString();
+                    if (selectedAnswer.Equals(correctAnswer, StringComparison.OrdinalIgnoreCase))
+                    {
+                        correctCount++;
+                    }
+                }
+            }
+
+            // Calculate the percentage score
+            double percentageScore = (double)correctCount / totalQuestions * 100;
+
+            // Store the result in the database (optional)
+            //SaveResult(userID, correctCount, totalQuestions, percentageScore);
+
+            // Redirect to the result page or display the result
+            Session["Result"] = new
+            {
+                CorrectCount = correctCount,
+                TotalQuestions = totalQuestions,
+                PercentageScore = percentageScore
+            };
+            Response.Redirect("Result.aspx");
+        }
+
+        private DataTable GetUserSubmissions(int userID)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["BrainBuilderDB"].ConnectionString;
+            string query = "SELECT QuestionID, SelectedOption FROM UserSubmissions WHERE UserID = @UserID";
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@UserID", userID);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                return dt;
+            }
+        }
+
+        private DataTable GetCorrectAnswers()
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["BrainBuilderDB"].ConnectionString;
+            string query = "SELECT QuestionID, CorrectAnswer FROM Questions";
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                return dt;
+            }
+        }
+
     }
 }

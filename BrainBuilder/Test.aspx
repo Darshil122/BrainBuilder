@@ -42,10 +42,10 @@
 
                 <br />
 <asp:RadioButtonList ID="answerOptions" runat="server">
-    <asp:ListItem Text="A. Option 1" Value="1"></asp:ListItem>
-    <asp:ListItem Text="B. Option 2" Value="2"></asp:ListItem>
-    <asp:ListItem Text="C. Option 3" Value="3"></asp:ListItem>
-    <asp:ListItem Text="D. Option 4" Value="4"></asp:ListItem>
+    <asp:ListItem Text="A. Option 1" Value="A"></asp:ListItem>
+    <asp:ListItem Text="B. Option 2" Value="B"></asp:ListItem>
+    <asp:ListItem Text="C. Option 3" Value="C"></asp:ListItem>
+    <asp:ListItem Text="D. Option 4" Value="D"></asp:ListItem>
 </asp:RadioButtonList>
 
                 <div class="mt-3">

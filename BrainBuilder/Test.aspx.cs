@@ -214,7 +214,7 @@ namespace BrainBuilder
                 DataRow[] correctRow = correctAnswers.Select($"QuestionID = {questionID}");
                 if (correctRow.Length > 0)
                 {
-                    string correctAnswer = correctRow[0]["CorrectAnswer"].ToString();
+                    string correctAnswer = correctRow[0]["CorrectOption"].ToString();
                     if (selectedAnswer.Equals(correctAnswer, StringComparison.OrdinalIgnoreCase))
                     {
                         correctCount++;
@@ -259,7 +259,7 @@ namespace BrainBuilder
         private DataTable GetCorrectAnswers()
         {
             string connectionString = ConfigurationManager.ConnectionStrings["BrainBuilderDB"].ConnectionString;
-            string query = "SELECT QuestionID, CorrectAnswer FROM Questions";
+            string query = "SELECT QuestionID, CorrectOption FROM Questions";
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {

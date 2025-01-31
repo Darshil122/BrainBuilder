@@ -67,10 +67,10 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav mt-3">
                     <li class="active">
-                        <a href="index.html"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                        <a href="Dashboard.aspx"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                     </li>
                     <li>
-                        <a href="#"><i class="menu-icon fa fa-cogs"></i>Components</a>
+                        <a href="AddQuestion.aspx"><i class="menu-icon fa fa-cogs"></i>Add Question</a>
                     </li>
                     <li>
                         <a href="#"><i class="menu-icon fa fa-table"></i>Tables</a>

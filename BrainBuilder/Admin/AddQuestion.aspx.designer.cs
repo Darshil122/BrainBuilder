@@ -22,15 +22,6 @@ namespace BrainBuilder.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlForm addQuestionForm;
         
         /// <summary>
-        /// ddlCourses control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlCourses;
-        
-        /// <summary>
         /// questionText control.
         /// </summary>
         /// <remarks>
@@ -38,6 +29,15 @@ namespace BrainBuilder.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea questionText;
+        
+        /// <summary>
+        /// lblQuestionError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblQuestionError;
         
         /// <summary>
         /// option1 control.
@@ -49,6 +49,15 @@ namespace BrainBuilder.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlInputText option1;
         
         /// <summary>
+        /// lblOption1Error control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblOption1Error;
+        
+        /// <summary>
         /// option2 control.
         /// </summary>
         /// <remarks>
@@ -56,6 +65,15 @@ namespace BrainBuilder.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText option2;
+        
+        /// <summary>
+        /// lblOption2Error control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblOption2Error;
         
         /// <summary>
         /// option3 control.
@@ -67,6 +85,15 @@ namespace BrainBuilder.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlInputText option3;
         
         /// <summary>
+        /// lblOption3Error control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblOption3Error;
+        
+        /// <summary>
         /// option4 control.
         /// </summary>
         /// <remarks>
@@ -76,6 +103,15 @@ namespace BrainBuilder.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlInputText option4;
         
         /// <summary>
+        /// lblOption4Error control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblOption4Error;
+        
+        /// <summary>
         /// correctOption control.
         /// </summary>
         /// <remarks>
@@ -83,5 +119,14 @@ namespace BrainBuilder.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlSelect correctOption;
+        
+        /// <summary>
+        /// lblCorrectOptionError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCorrectOptionError;
     }
 }

@@ -186,7 +186,6 @@ namespace BrainBuilder
 
         protected void FinishButton_Click(object sender, EventArgs e)
         {
-            // Fetch UserID from session
             if (Session["UserID"] == null)
             {
                 Response.Redirect("~/Account/Login.aspx");
@@ -210,7 +209,6 @@ namespace BrainBuilder
                 int questionID = Convert.ToInt32(userRow["QuestionID"]);
                 string selectedAnswer = userRow["SelectedOption"].ToString();
 
-                // Find the correct answer for this question
                 DataRow[] correctRow = correctAnswers.Select($"QuestionID = {questionID}");
                 if (correctRow.Length > 0)
                 {

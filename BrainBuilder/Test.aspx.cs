@@ -16,6 +16,10 @@ namespace BrainBuilder
                 LoadQuestion(Convert.ToInt32(ViewState["CurrentQuestionID"]));
                 UpdateButtonVisibility();
             }
+            if (Session["UserID"] == null)
+            {
+                Response.Redirect("~/Account/Login.aspx");
+            }
         }
 
         private void LoadQuestion(int questionID)

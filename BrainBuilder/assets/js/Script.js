@@ -17,5 +17,16 @@ function updateTimer() {
 // Start the timer
 const timerInterval = setInterval(updateTimer, 1000);
 
+// msg Box
+    function showBootstrapAlert() {
+        var alertMessage = document.getElementById('alertMessage');
+        alertMessage.style.display = 'block';
+
+        // Optionally, hide the alert after a few seconds
+        setTimeout(function() {
+            alertMessage.style.display = 'none';
+        }, 3000); // 3000 milliseconds = 3 seconds
+    }
+
 
 

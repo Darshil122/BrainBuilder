@@ -41,33 +41,35 @@ namespace BrainBuilder.Account
                 {
                     conn.Open();
 
-                    // Query to fetch UserID based on email and password
-                    string query = "SELECT UserID FROM Users WHERE Email = @Email AND Password = @Password";
+                    string query = "SELECT UserID, UserName FROM Users WHERE Email = @Email AND Password = @Password";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@Email", userEmail);
-                        cmd.Parameters.AddWithValue("@Password", userPassword); // Assuming passwords are stored as plain text; consider hashing them
+                        cmd.Parameters.AddWithValue("@Password", userPassword); 
 
-                        // Execute the query and get the UserID
-                        object result = cmd.ExecuteScalar();
-
-                        if (result != null) // If a UserID is found
+                        using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            int userID = Convert.ToInt32(result); // Convert the result to an integer
+                            if (reader.Read())
+                            {
+                                int userID = reader.GetInt32(0);  
+                                string userName = reader.GetString(1);
 
-                            // Store UserID and Email in the session
-                            Session["UserID"] = userID;
-                            Session["UserEmail"] = userEmail;
+                                // Store UserID, UserName, and Email in the session
+                                Session["UserID"] = userID;
+                                Session["UserName"] = userName;
+                                Session["UserEmail"] = userEmail;
 
-                            // Redirect to the requested page or default page
-                            FormsAuthentication.RedirectFromLoginPage(userEmail, false);
-                        }
-                        else
-                        {
-                            ShowError("Invalid email or password."); // Show error if no user is found
+                                // Redirect to the requested page or default page
+                                FormsAuthentication.RedirectFromLoginPage(userEmail, false);
+                            }
+                            else
+                            {
+                                ShowError("Invalid email or password.");
+                            }
                         }
                     }
+
                 }
             }
             catch (Exception ex)

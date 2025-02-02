@@ -15,6 +15,10 @@
                 <p class="card-text" id="resultText" runat="server"></p>
             </div>
         </div>
+        <div id="certificateSection" runat="server" visible="false">
+    <p>Congratulations! You have earned a certificate.</p>
+    <a id="certificateLinkElement" runat="server" href="#" target="_blank">Download Certificate</a>
+</div>
     </div>
 </body>
 </html>

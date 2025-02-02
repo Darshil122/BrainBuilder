@@ -89,9 +89,10 @@ namespace BrainBuilder
             int currentQuestionID = Convert.ToInt32(ViewState["CurrentQuestionID"] ?? "1");
             int totalQuestions = GetTotalQuestions();
 
-            //previousButton.Visible = currentQuestionID > 1;
-
             nextButton.Visible = currentQuestionID < totalQuestions;
+
+            finishButton.Visible = currentQuestionID == totalQuestions;
+
             submitButton.Visible = true;
         }
 
@@ -131,7 +132,8 @@ namespace BrainBuilder
             }
             else
             {
-                Response.Write("<script>alert('Please select an answer!')</script>");
+                // Show Bootstrap alert
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "showAlert", "showBootstrapAlert();", true);
             }
         }
 

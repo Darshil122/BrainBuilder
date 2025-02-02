@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Test.aspx.cs" Inherits="BrainBuilder.Test" %>
 
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <main>
         <!--? slider Area Start-->
@@ -41,12 +42,16 @@
                 <asp:Label ID="questionText" runat="server" Text="Question Text"></asp:Label>
 
                 <br />
-<asp:RadioButtonList ID="answerOptions" runat="server">
-    <asp:ListItem Text="A. Option 1" Value="A"></asp:ListItem>
-    <asp:ListItem Text="B. Option 2" Value="B"></asp:ListItem>
-    <asp:ListItem Text="C. Option 3" Value="C"></asp:ListItem>
-    <asp:ListItem Text="D. Option 4" Value="D"></asp:ListItem>
-</asp:RadioButtonList>
+                <asp:RadioButtonList ID="answerOptions" runat="server">
+                    <asp:ListItem Text="A. Option 1" Value="A"></asp:ListItem>
+                    <asp:ListItem Text="B. Option 2" Value="B"></asp:ListItem>
+                    <asp:ListItem Text="C. Option 3" Value="C"></asp:ListItem>
+                    <asp:ListItem Text="D. Option 4" Value="D"></asp:ListItem>
+                </asp:RadioButtonList>
+
+                <div id="alertMessage" class="alert alert-danger" style="display: none;">
+                    Please select an answer!
+                </div>
 
                 <div class="mt-3">
                     <%--<asp:Button ID="previousButton" runat="server" Text="Previous" CssClass="btn" OnClick="PreviousButton_Click" />--%>

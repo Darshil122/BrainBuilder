@@ -41,7 +41,7 @@ namespace BrainBuilder.Account
                 {
                     conn.Open();
 
-                    string query = "SELECT UserID, UserName FROM Users WHERE Email = @Email AND Password = @Password";
+                    string query = "SELECT * FROM Users WHERE Email = @Email AND Password = @Password";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {

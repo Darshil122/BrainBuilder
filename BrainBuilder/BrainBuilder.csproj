@@ -134,6 +134,7 @@
     <Content Include="Admin\assets\js\widgets.js" />
     <Content Include="Admin\assets\scss\style.css" />
     <Content Include="Admin\Dashboard.aspx" />
+    <Content Include="Admin\UserData.aspx" />
     <Content Include="assets\css\animate.min.css" />
     <Content Include="assets\css\animated-headline.css" />
     <Content Include="assets\css\bootstrap.min.css" />
@@ -199,6 +200,7 @@
     <Content Include="Contact.aspx" />
     <Content Include="data-science.aspx" />
     <Content Include="devops.aspx" />
+    <Content Include="GenerateCertificate.aspx" />
     <Content Include="generative-ai.aspx" />
     <Content Include="machine-learning.aspx" />
     <Content Include="packages.config" />
@@ -439,6 +441,13 @@
     <Compile Include="Admin\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\UserData.aspx.cs">
+      <DependentUpon>UserData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserData.aspx.designer.cs">
+      <DependentUpon>UserData.aspx</DependentUpon>
+    </Compile>
     <Compile Include="azure-data-engineer.aspx.cs">
       <DependentUpon>azure-data-engineer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -480,6 +489,13 @@
     </Compile>
     <Compile Include="devops.aspx.designer.cs">
       <DependentUpon>devops.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GenerateCertificate.aspx.cs">
+      <DependentUpon>GenerateCertificate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GenerateCertificate.aspx.designer.cs">
+      <DependentUpon>GenerateCertificate.aspx</DependentUpon>
     </Compile>
     <Compile Include="generative-ai.aspx.cs">
       <DependentUpon>generative-ai.aspx</DependentUpon>

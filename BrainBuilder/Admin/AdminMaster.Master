@@ -73,7 +73,7 @@
                         <a href="AddQuestion.aspx"><i class="menu-icon fa fa-cogs"></i>Add Question</a>
                     </li>
                     <li>
-                        <a href="#"><i class="menu-icon fa fa-table"></i>Tables</a>
+                        <a href="UserData.aspx"><i class="menu-icon fa fa-table"></i>User Data</a>
                     </li>
                     <li>
                         <a href="#"><i class="menu-icon fa fa-th"></i>Forms</a>

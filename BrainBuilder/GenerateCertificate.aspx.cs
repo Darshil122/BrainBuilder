@@ -1,9 +1,9 @@
 ﻿using System;
 using System.IO;
 using System.Web;
-using iText.Kernel.Pdf;
-using iText.Layout;
-using iText.Layout.Element;
+//using iText.Kernel.Pdf;
+//using iText.Layout;
+//using iText.Layout.Element;
 
 namespace BrainBuilder
 {

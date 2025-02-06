@@ -1,16 +1,15 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GenerateCertificate.aspx.cs" Inherits="BrainBuilder.GenerateCertificate" %>
+<%@ Register Assembly="CrystalDecisions.Web" Namespace="CrystalDecisions.Web" TagPrefix="CR" %>
 
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head runat="server">
-    <title></title>
+    <title>Certificate</title>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-    
-    </div>
+        <CR:CrystalReportViewer ID="crvCertificate" runat="server" AutoDataBind="true" 
+            Width="100%" Height="800px"/>
     </form>
 </body>
 </html>

@@ -8,8 +8,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <CR:CrystalReportViewer ID="crvCertificate" runat="server" AutoDataBind="true" 
-            Width="100%" Height="800px"/>
+        <%--<CR:CrystalReportViewer ID="crvCertificate" runat="server" AutoDataBind="true" 
+            Width="100%" Height="800px"/>--%>
     </form>
 </body>
 </html>

@@ -10,41 +10,41 @@ namespace BrainBuilder
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                GenerateCertificateReport();
-            }
+        //    if (!IsPostBack)
+        //    {
+        //        GenerateCertificateReport();
+        //    }
         }
 
-        private void GenerateCertificateReport()
-        {
-            if (Session["Result"] != null && Session["UserName"] != null)
-            {
-                var result = Session["Result"] as dynamic;
-                string userName = Session["UserName"].ToString();
+        //private void GenerateCertificateReport()
+        //{
+        //    if (Session["Result"] != null && Session["UserName"] != null)
+        //    {
+        //        var result = Session["Result"] as dynamic;
+        //        string userName = Session["UserName"].ToString();
 
-                // Create a DataTable for passing data to the Crystal Report
-                DataTable dt = new DataTable();
-                dt.Columns.Add("CandidateName", typeof(string));
-                dt.Columns.Add("ExamName", typeof(string));
-                dt.Columns.Add("Score", typeof(string));
-                dt.Columns.Add("CompletionDate", typeof(string));
+        //        // Create a DataTable for passing data to the Crystal Report
+        //        DataTable dt = new DataTable();
+        //        dt.Columns.Add("CandidateName", typeof(string));
+        //        dt.Columns.Add("ExamName", typeof(string));
+        //        dt.Columns.Add("Score", typeof(string));
+        //        dt.Columns.Add("CompletionDate", typeof(string));
 
-                dt.Rows.Add(userName, "Brain Builder Exam", $"{result.PercentageScore:F2}%", DateTime.Now.ToString("yyyy-MM-dd"));
+        //        dt.Rows.Add(userName, "Brain Builder Exam", $"{result.PercentageScore:F2}%", DateTime.Now.ToString("yyyy-MM-dd"));
 
-                // Load Crystal Report
-                ReportDocument rpt = new ReportDocument();
-                rpt.Load(Server.MapPath("~/Reports/CertificateReport.rpt"));
-                rpt.SetDataSource(dt);
+        //        // Load Crystal Report
+        //        ReportDocument rpt = new ReportDocument();
+        //        rpt.Load(Server.MapPath("~/Reports/CertificateReport.rpt"));
+        //        rpt.SetDataSource(dt);
 
-                // Bind report to CrystalReportViewer
-                crvCertificate.ReportSource = rpt;
-                crvCertificate.DataBind();
-            }
-            else
-            {
-                Response.Write("No certificate available. Please complete the quiz.");
-            }
-        }
+        //        // Bind report to CrystalReportViewer
+        //        crvCertificate.ReportSource = rpt;
+        //        crvCertificate.DataBind();
+        //    }
+        //    else
+        //    {
+        //        Response.Write("No certificate available. Please complete the quiz.");
+        //    }
+        //}
     }
 }

@@ -465,12 +465,6 @@
     <Compile Include="blockchain.aspx.designer.cs">
       <DependentUpon>blockchain.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CertificateReport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CertificateReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="cloud-computing.aspx.cs">
       <DependentUpon>cloud-computing.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -566,12 +560,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Certificates\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="CertificateReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CertificateReport.cs</LastGenOutput>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />

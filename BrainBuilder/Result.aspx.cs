@@ -45,7 +45,7 @@ namespace BrainBuilder
             if (Session["courseID"] != null)
             {
                 int courseID = Convert.ToInt32(Session["courseID"]);
-                string connectionString = ConfigurationManager.ConnectionStrings["YourConnectionString"].ConnectionString;
+                string connectionString = ConfigurationManager.ConnectionStrings["BrainBuilderDB"].ConnectionString;
 
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {

@@ -156,7 +156,6 @@
     <Content Include="assets\css\slicknav.css" />
     <Content Include="assets\css\style.css" />
     <Content Include="assets\css\themify-icons.css" />
-    <Content Include="assets\img\certificate_template.jpg" />
     <Content Include="assets\img\certificate_template.png" />
     <Content Include="assets\img\gallery\ARVR.png" />
     <Content Include="assets\img\gallery\azure_data_engineer.png" />
@@ -168,7 +167,10 @@
     <Content Include="assets\img\gallery\machine.png" />
     <Content Include="assets\img\gallery\softwareDev.png" />
     <Content Include="assets\img\logo\bb.png" />
+    <Content Include="assets\img\logo\BBlogo.png" />
+    <Content Include="assets\img\logo\BLOGO.png" />
     <Content Include="assets\img\logo\Brain Builder.png" />
+    <Content Include="assets\img\certificate_template.jpg" />
     <Content Include="assets\js\animated.headline.js" />
     <Content Include="assets\js\bootstrap.min.js" />
     <Content Include="assets\js\contact.js" />
@@ -270,6 +272,7 @@
     <Content Include="Admin\assets\scss\style.scss" />
     <Content Include="Admin\images\logo.psd" />
     <Content Include="assets\fonts\Bugaki.ttf" />
+    <Content Include="assets\fonts\Lato-Regular.ttf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

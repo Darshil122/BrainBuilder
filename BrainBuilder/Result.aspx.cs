@@ -15,8 +15,8 @@ namespace BrainBuilder
                 int correctCount = result.CorrectCount;
                 int totalQuestions = result.TotalQuestions;
                 double percentageScore = result.PercentageScore;
-                string studentName = Session["UserName"]?.ToString() ?? "Student"; // Get student name from session
-                string courseName = GetCourseName(); // Fetch Course Name
+                string studentName = Session["UserName"]?.ToString() ?? "Student"; 
+                string courseName = GetCourseName();
 
                 // Display the result with course name
                 resultText.InnerText = $"Course: {courseName} - You answered {correctCount} out of {totalQuestions} questions correctly. Your score is {percentageScore:F2}%.";
@@ -41,7 +41,7 @@ namespace BrainBuilder
 
         private string GetCourseName()
         {
-            string courseName = "Unknown Course"; // Default value
+            string courseName = "Information Technology";
             if (Session["courseID"] != null)
             {
                 int courseID = Convert.ToInt32(Session["courseID"]);
@@ -49,7 +49,7 @@ namespace BrainBuilder
 
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT CourseName FROM Course WHERE CourseID = @CourseID";
+                    string query = "SELECT CourseName FROM Courses WHERE CourseID = @CourseID";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@CourseID", courseID);
 
@@ -64,14 +64,11 @@ namespace BrainBuilder
                     }
                     catch (Exception ex)
                     {
-                        // Log error (you can replace this with proper error logging)
                         Console.WriteLine("Database Error: " + ex.Message);
                     }
                 }
             }
             return courseName;
         }
-
-
     }
 }

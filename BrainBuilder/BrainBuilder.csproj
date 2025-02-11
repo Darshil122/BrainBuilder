@@ -207,6 +207,7 @@
     <Content Include="Contact.aspx" />
     <Content Include="data-science.aspx" />
     <Content Include="devops.aspx" />
+    <Content Include="ExamAlreadyTaken.aspx" />
     <Content Include="GenerateCertificate.aspx" />
     <Content Include="generative-ai.aspx" />
     <Content Include="machine-learning.aspx" />
@@ -498,6 +499,13 @@
     </Compile>
     <Compile Include="devops.aspx.designer.cs">
       <DependentUpon>devops.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExamAlreadyTaken.aspx.cs">
+      <DependentUpon>ExamAlreadyTaken.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExamAlreadyTaken.aspx.designer.cs">
+      <DependentUpon>ExamAlreadyTaken.aspx</DependentUpon>
     </Compile>
     <Compile Include="GenerateCertificate.aspx.cs">
       <DependentUpon>GenerateCertificate.aspx</DependentUpon>

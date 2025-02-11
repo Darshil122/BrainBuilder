@@ -17,14 +17,6 @@ namespace BrainBuilder
                 UpdateButtonVisibility();
             }
 
-            //int userID = Convert.ToInt32(Session["UserID"]);
-            //int courseID = 1;
-
-            //if (HasUserAlreadyTakenExam(userID, courseID))
-            //{
-            //    Response.Redirect("Result.aspx");
-            //    return;
-            //}
             if (Session["UserID"] == null)
             {
                 Response.Redirect("~/Account/Login.aspx");
@@ -165,6 +157,7 @@ namespace BrainBuilder
             }
 
             int courseID = Convert.ToInt32(Request.QueryString["CourseID"]);
+            Session["courseID"] = courseID;
 
             string connectionString = ConfigurationManager.ConnectionStrings["BrainBuilderDB"].ConnectionString;
             string query = "INSERT INTO UserSubmissions (UserID, CourseID, QuestionID, SelectedOption) VALUES (@UserID, @CourseID, @QuestionID, @SelectedAnswer)";
@@ -176,8 +169,6 @@ namespace BrainBuilder
                 cmd.Parameters.AddWithValue("@CourseID", courseID); // Add CourseID parameter
                 cmd.Parameters.AddWithValue("@QuestionID", questionID);
                 cmd.Parameters.AddWithValue("@SelectedAnswer", selectedAnswer);
-
-                Session["courseID"] = courseID;
 
                 try
                 {
@@ -239,9 +230,6 @@ namespace BrainBuilder
 
             // Calculate the percentage score
             double percentageScore = (double)correctCount / totalQuestions * 100;
-
-            // Store the result in the database (optional)
-            //SaveResult(userID, correctCount, totalQuestions, percentageScore);
 
             // Redirect to the result page or display the result
             Session["Result"] = new

@@ -15,11 +15,10 @@ namespace BrainBuilder
             }
 
             int userID = Convert.ToInt32(Session["UserID"]);
-            int courseID = 101; // Change this to dynamically get the course ID if needed
+            int courseID = 1;
 
             if (HasUserAlreadyTakenExam(userID, courseID))
             {
-                // Redirect to a message page
                 Response.Redirect("~/ExamAlreadyTaken.aspx");
             }
         }

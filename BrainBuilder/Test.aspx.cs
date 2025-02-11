@@ -16,6 +16,15 @@ namespace BrainBuilder
                 LoadQuestion(Convert.ToInt32(ViewState["CurrentQuestionID"]));
                 UpdateButtonVisibility();
             }
+
+            //int userID = Convert.ToInt32(Session["UserID"]);
+            //int courseID = 1;
+
+            //if (HasUserAlreadyTakenExam(userID, courseID))
+            //{
+            //    Response.Redirect("Result.aspx");
+            //    return;
+            //}
             if (Session["UserID"] == null)
             {
                 Response.Redirect("~/Account/Login.aspx");
@@ -167,6 +176,8 @@ namespace BrainBuilder
                 cmd.Parameters.AddWithValue("@CourseID", courseID); // Add CourseID parameter
                 cmd.Parameters.AddWithValue("@QuestionID", questionID);
                 cmd.Parameters.AddWithValue("@SelectedAnswer", selectedAnswer);
+
+                Session["courseID"] = courseID;
 
                 try
                 {

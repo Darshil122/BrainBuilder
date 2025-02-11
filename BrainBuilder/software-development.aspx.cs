@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace BrainBuilder
 {
@@ -14,6 +11,41 @@ namespace BrainBuilder
             if (Session["UserID"] == null)
             {
                 Response.Redirect("~/Account/Login.aspx");
+                return;
+            }
+
+            int userID = Convert.ToInt32(Session["UserID"]);
+            int courseID = 101; // Change this to dynamically get the course ID if needed
+
+            if (HasUserAlreadyTakenExam(userID, courseID))
+            {
+                // Redirect to a message page
+                Response.Redirect("~/ExamAlreadyTaken.aspx");
+            }
+        }
+
+        private bool HasUserAlreadyTakenExam(int userID, int courseID)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["BrainBuilderDB"].ConnectionString;
+            string query = "SELECT COUNT(*) FROM UserSubmissions WHERE UserID = @UserID AND CourseID = @CourseID";
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@UserID", userID);
+                cmd.Parameters.AddWithValue("@CourseID", courseID);
+
+                try
+                {
+                    con.Open();
+                    int count = (int)cmd.ExecuteScalar();
+                    return count > 0; // If count > 0, user has already taken the exam
+                }
+                catch (Exception ex)
+                {
+                    Response.Write($"<script>alert('Error: {ex.Message}')</script>");
+                    return false;
+                }
             }
         }
     }

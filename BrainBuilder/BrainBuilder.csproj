@@ -156,6 +156,8 @@
     <Content Include="assets\css\slicknav.css" />
     <Content Include="assets\css\style.css" />
     <Content Include="assets\css\themify-icons.css" />
+    <Content Include="assets\img\certificate_template.jpg" />
+    <Content Include="assets\img\certificate_template.png" />
     <Content Include="assets\img\gallery\ARVR.png" />
     <Content Include="assets\img\gallery\azure_data_engineer.png" />
     <Content Include="assets\img\gallery\Blockchain.png" />
@@ -267,6 +269,7 @@
     <Content Include="Admin\assets\scss\style.css.map" />
     <Content Include="Admin\assets\scss\style.scss" />
     <Content Include="Admin\images\logo.psd" />
+    <Content Include="assets\fonts\Bugaki.ttf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -559,7 +562,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Certificates\" />
+    <Folder Include="certificates\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />

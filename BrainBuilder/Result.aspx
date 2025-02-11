@@ -17,8 +17,8 @@
         </div>
         <asp:Label ID="Label1" runat="server" CssClass="result-text"></asp:Label>
 
-        <div id="certificateSection" runat="server">
-            <a id="certificateLinkElement" runat="server" class="btn btn-success" href="#">Download Certificate</a>
+         <div id="certificateSection" runat="server" visible="false">
+            <a id="certificateLinkElement" runat="server" class="btn btn-success">Download Certificate</a>
         </div>
 
     </div>

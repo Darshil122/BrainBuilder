@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using System.Web;
 
 namespace BrainBuilder
@@ -14,6 +13,7 @@ namespace BrainBuilder
                 int correctCount = result.CorrectCount;
                 int totalQuestions = result.TotalQuestions;
                 double percentageScore = result.PercentageScore;
+                string studentName = Session["UserName"]?.ToString() ?? "Student"; // Get student name from session
 
                 // Display the result
                 resultText.InnerText = $"You answered {correctCount} out of {totalQuestions} questions correctly. Your score is {percentageScore:F2}%.";
@@ -21,7 +21,7 @@ namespace BrainBuilder
                 if (percentageScore >= 80)
                 {
                     certificateLinkElement.InnerText = "Download Certificate";
-                    certificateLinkElement.HRef = "GenerateCertificate.aspx"; // Link to certificate generator
+                    certificateLinkElement.HRef = $"GenerateCertificate.aspx?name={HttpUtility.UrlEncode(studentName)}&score={percentageScore}";
                     certificateSection.Visible = true;
                 }
                 else

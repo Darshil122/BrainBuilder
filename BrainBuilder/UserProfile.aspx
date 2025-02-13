@@ -52,7 +52,7 @@
                                             List<string> certificates = (List<string>)Session["UserCertificates"];
                                             foreach (string certPath in certificates)
                                             { %>
-                                    <div class="col-md-4 text-center">
+                                    <div class="col-md-4 text-center mb-5">
                                         <div class="card p-3 shadow-lg">
                                             <img src="<%= certPath %>" class="img-fluid rounded" alt="Certificate">
                                         </div>

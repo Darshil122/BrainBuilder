@@ -21,15 +21,24 @@ namespace BrainBuilder.Account
 
         protected void LoginUser(object sender, EventArgs e)
         {
+            Emailerror.Visible = false;
+            Passerror.Visible = false;
+
             // Get email and password from TextBox inputs
             string userEmail = email.Text.Trim();
             string userPassword = password.Text.Trim();
 
-            // Validate inputs
-            if (string.IsNullOrEmpty(userEmail) || string.IsNullOrEmpty(userPassword))
+            bool isValid = true;
+
+            if (string.IsNullOrWhiteSpace(userEmail))
             {
-                ShowError("Email and Password cannot be empty.");
-                return;
+                Emailerror.Visible = true;
+                isValid = false;
+            }
+            if (string.IsNullOrWhiteSpace(userPassword))
+            {
+                Passerror.Visible = true;
+                isValid = false;
             }
 
             try
@@ -60,12 +69,8 @@ namespace BrainBuilder.Account
                                 Session["UserName"] = userName;
                                 Session["UserEmail"] = userEmail;
 
-                                // Redirect to the requested page or default page
-                                FormsAuthentication.RedirectFromLoginPage(userEmail, false);
-                            }
-                            else
-                            {
-                                ShowError("Invalid email or password.");
+                                //// Redirect to the requested page or default page
+                                //FormsAuthentication.RedirectFromLoginPage(userEmail, false);
                             }
                         }
                     }

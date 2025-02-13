@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
 <body>
-    <main class="login-body bg-primary">
+    <main class="login-body bg-">  
         <!-- Login Admin -->
         <form id="loginForm" runat="server">
             <div class="login-form">
@@ -30,13 +30,15 @@
                 <div class="form-input">
                     <label for="email">Email</label>
                     <asp:TextBox ID="email" name="email" runat="server" Class="form-control" placeholder="Email"></asp:TextBox>
+                    <asp:Label ID="Emailerror" runat="server" CssClass="text-danger" Visible="false" Text="Please enter valid email."></asp:Label>
                 </div>
                 <div class="form-input">
                     <label for="password">Password</label>
                     <asp:TextBox ID="password" name="password" runat="server" TextMode="Password" Class="form-control" placeholder="Password"></asp:TextBox>
+                    <asp:Label ID="Passerror" runat="server" CssClass="text-danger" Visible="false" Text="Please enter valid password"></asp:Label>
                 </div>
-                <div class="form-input pt-30">
-                    <asp:Button ID="btnLogin" runat="server" CssClass="btn btn-primary" Text="Log in" OnClick="LoginUser"/>
+                <div class="form-input">
+                    <asp:Button ID="btnLogin" runat="server" Class="btn btn-primary" Text="Log in" OnClick="LoginUser"/>
                 </div>
                 <!-- Forget Password -->
                 <a href="../Default.aspx" class="forget">Forget Password</a>

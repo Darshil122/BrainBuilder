@@ -18,35 +18,6 @@ namespace BrainBuilder.Admin
             //}
         }
 
-        //private void LoadCourses()
-        //{
-        //    string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["BrainBuilderDB"].ConnectionString;
-
-        //    string query = "SELECT CourseID, CourseName FROM Courses";
-
-        //    using (SqlConnection con = new SqlConnection(connectionString))
-        //    {
-        //        SqlCommand cmd = new SqlCommand(query, con);
-
-        //        try
-        //        {
-        //            con.Open();
-        //            SqlDataReader reader = cmd.ExecuteReader();
-
-        //            ddlCourses.DataSource = reader;
-        //            ddlCourses.DataTextField = "CourseName"; // Display course names
-        //            ddlCourses.DataValueField = "CourseID"; // Use CourseID as the value
-        //            ddlCourses.DataBind();
-
-        //            // Optionally add a default "Select a course" option
-        //            ddlCourses.Items.Insert(0, new ListItem("-- Select a Course --", ""));
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            Response.Write($"<script>alert('Error loading courses: {ex.Message}');</script>");
-        //        }
-        //    }
-        //}
 
         protected void AddQuestion_Click(object sender, EventArgs e)
         {

@@ -49,9 +49,8 @@
                     <asp:ListItem Text="D. Option 4" Value="D"></asp:ListItem>
                 </asp:RadioButtonList>
 
-                <div id="alertMessage" class="alert alert-danger" style="display: none;">
-                    Please select an answer!
-                </div>
+                <asp:Label ID="testerror" runat="server" CssClass="text-danger" Visible="false" Text="Please select your answer."></asp:Label>
+
 
                 <div class="mt-3">
                     <%--<asp:Button ID="previousButton" runat="server" Text="Previous" CssClass="btn" OnClick="PreviousButton_Click" />--%>

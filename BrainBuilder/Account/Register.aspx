@@ -32,24 +32,28 @@
             <div class="form-input">
                 <label for="name">Full name</label>
                 <input  type="text" name="name" placeholder="Full name" id="name" runat="server"/>
+                <asp:Label ID="Namerror" runat="server" CssClass="text-danger" Visible="false" Text="Please enter your name."></asp:Label>
             </div>
             <div class="form-input">
                 <label for="name">Email Address</label>
                 <input type="email" name="email" id="email" placeholder="Email Address" runat="server"/>
+                <asp:Label ID="Emailerror" runat="server" CssClass="text-danger" Visible="false" Text="Please enter your email."></asp:Label>
             </div>
             <div class="form-input">
                 <label for="name">Password</label>
                 <input type="password" name="password" id="password" placeholder="Password" runat="server"/>
+                <asp:Label ID="Passerror" runat="server" CssClass="text-danger" Visible="false" Text="Please enter password."></asp:Label>
             </div>
             <div class="form-input">
                 <label for="name">Confirm Password</label>
                 <input type="password" name="password" id="confirmPassword" placeholder="Confirm Password" runat="server"/>
+                <asp:Label ID="cpasserror" runat="server" CssClass="text-danger" Visible="false" Text="Please enter your confirm password."></asp:Label>
+                <asp:Label ID="cppasserror" runat="server" CssClass="text-danger" Visible="false" Text="Both password doesn't match."></asp:Label>
             </div>
-            <div class="form-input pt-30">
+            <div class="form-input">
                 <input type="submit" runat="server" name="submit" OnServerClick="RegisterUser" value="Registration"/>
             </div>
-            <!-- Forget Password -->
-            <a href="Login.aspx" class="registration">login</a>
+            <a href="Login.aspx" class="text-white">Already you have Register?</a>
         </div>
     </form>
     <!-- /end login form -->

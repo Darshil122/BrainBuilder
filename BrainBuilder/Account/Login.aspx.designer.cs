@@ -31,6 +31,15 @@ namespace BrainBuilder.Account {
         protected global::System.Web.UI.WebControls.TextBox email;
         
         /// <summary>
+        /// Emailerror control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Emailerror;
+        
+        /// <summary>
         /// password control.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace BrainBuilder.Account {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox password;
+        
+        /// <summary>
+        /// Passerror control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Passerror;
         
         /// <summary>
         /// btnLogin control.

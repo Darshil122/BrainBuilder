@@ -12,19 +12,46 @@ namespace BrainBuilder.Account
 
         protected void RegisterUser(object sender, EventArgs e)
         {
+            Namerror.Visible = false;
+            Emailerror.Visible = false;
+            Passerror.Visible = false;
+            cpasserror.Visible = false;
+            cppasserror.Visible = false;
+
             string fullName = Request.Form["name"];
             string email = Request.Form["email"];
             string password = Request.Form["password"];
             string confirmPassword = Request.Form["confirmPassword"];
 
-            if (password != confirmPassword)
+            bool isValid = true;
+
+            if (string.IsNullOrWhiteSpace(fullName))
             {
-                // Show error message
-                Response.Write("<script>alert('Passwords do not match!');</script>");
-                return;
+                Namerror.Visible = true;
+                isValid = false;
+            }
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                Emailerror.Visible = true;
+                isValid = false;
+            }
+            if (string.IsNullOrWhiteSpace(password))
+            {
+                Passerror.Visible = true;
+                isValid = false;
             }
 
-            //string passwordHash = BCrypt.Net.BCrypt.HashPassword(password); // Hash the password
+            if (string.IsNullOrWhiteSpace(confirmPassword)){
+                cpasserror.Visible = true;
+                isValid = false;
+            }
+
+            if (password != confirmPassword)
+            {
+                cppasserror.Visible = true;
+                isValid = false;
+            }
+
 
             string connectionString = ConfigurationManager.ConnectionStrings["BrainBuilderDB"].ConnectionString;
 

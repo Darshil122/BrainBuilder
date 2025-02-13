@@ -107,21 +107,6 @@ namespace BrainBuilder
             UpdateButtonVisibility();
         }
 
-        //protected void PreviousButton_Click(object sender, EventArgs e)
-        //{
-        //    int currentQuestionID = Convert.ToInt32(ViewState["CurrentQuestionID"] ?? "1");
-
-        //    if (currentQuestionID > 1)
-        //    {
-        //        currentQuestionID--;
-        //        ViewState["CurrentQuestionID"] = currentQuestionID;
-
-        //        LoadQuestion(currentQuestionID);
-        //    }
-
-        //    UpdateButtonVisibility();
-        //}
-
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
             int currentQuestionID = Convert.ToInt32(ViewState["CurrentQuestionID"] ?? "1");
@@ -134,7 +119,8 @@ namespace BrainBuilder
             else
             {
                 // Show Bootstrap alert
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "showAlert", "showBootstrapAlert();", true);
+                Response.Write("<script>alert('Failed to save answer.')</script>");
+
             }
         }
 
@@ -166,10 +152,11 @@ namespace BrainBuilder
             {
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@UserID", userID);
-                cmd.Parameters.AddWithValue("@CourseID", courseID); // Add CourseID parameter
+                cmd.Parameters.AddWithValue("@CourseID", courseID);
                 cmd.Parameters.AddWithValue("@QuestionID", questionID);
                 cmd.Parameters.AddWithValue("@SelectedAnswer", selectedAnswer);
 
+                //Response.Write($"<script>alert('Debug: UserID={Session["UserID"]}, CourseID={Request.QueryString["CourseID"]}, QuestionID={ViewState["CurrentQuestionID"]}, Answer={answerOptions.SelectedValue}')</script>");
                 try
                 {
                     con.Open();

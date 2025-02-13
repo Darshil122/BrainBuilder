@@ -13,7 +13,7 @@ namespace BrainBuilder
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string studentName = Request.QueryString["name"] ?? "Jaydev Kanzariya";
+            string studentName = Request.QueryString["name"] ?? "John Doe";
             string courseName = Request.QueryString["course"] ?? "Azure Data Engineer";
             string score = Request.QueryString["score"] ?? "80";
 
@@ -29,7 +29,7 @@ namespace BrainBuilder
             }
 
             // Define output file path
-            string outputPath = Path.Combine(certificatesFolder, $"{studentName}_Certificate.png");
+            string outputPath = Path.Combine(certificatesFolder, $"{courseName}_Certificate.png");
 
             using (Image image = Image.FromFile(templatePath))
             using (Graphics graphics = Graphics.FromImage(image))
@@ -63,12 +63,12 @@ namespace BrainBuilder
             }
 
             // Save the certificate path in the database
-            string dbPath = $"/certificates/{studentName}_Certificate.png";  // Use relative path for database
+            string dbPath = $"/certificates/{courseName}_Certificate.png";  // Use relative path for database
             SaveCertificateToDatabase(studentName, courseName, Convert.ToDecimal(score), dbPath);
 
             // Serve the file for download
             Response.ContentType = "image/png";
-            Response.AppendHeader("Content-Disposition", $"attachment; filename={studentName}_Certificate.png");
+            Response.AppendHeader("Content-Disposition", $"attachment; filename={courseName}_Certificate.png");
             Response.TransmitFile(outputPath);
             Response.End();
         }

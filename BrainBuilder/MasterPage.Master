@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="assets/css/slick.css">
     <link rel="stylesheet" href="assets/css/nice-select.css">
     <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 <body>
     <form runat="server">
@@ -56,12 +57,12 @@
                                                     <li><a href="About.aspx">About</a></li>
                                                     <li><a href="Contact.aspx">Contact</a></li>
                                                     <!-- Button -->
-                                                    <% if (Session["UserEmail"] == null) { %>
-                                                        <li class="button-header"><a href="Account/Login.aspx" class="btn btn3">Log in</a></li>
-                                                    <% } else { %>
-                                                        <li><a href="Account/Logout.aspx">Logout</a></li>
-                                                        <li class="button-header"><a href="#" class=""><%= Session["UserEmail"] %></a></li>
-                                                    <% } %>
+                                                   <% if (Session["UserEmail"] == null) { %>
+                                                            <li class="button-header"><a href="Account/Login.aspx" class="btn btn3">Log in</a></li>
+                                                        <% } else { %>
+                                                           <li><a href="UserProfile.aspx">Profile</a></li>
+                                                                    <li><a href="Account/Logout.aspx">Logout</a></li>
+                                                        <% } %>
                                                     <%--<li><a><%= Session["UserName"]%></a></li>--%>
                                                 </ul>
                                             </nav>
@@ -228,5 +229,6 @@
 <script src="./assets/js/plugins.js"></script>
 <script src="./assets/js/main.js"></script>
     <script src="assets/js/script.js"></script>
+
 </body>
 </html>

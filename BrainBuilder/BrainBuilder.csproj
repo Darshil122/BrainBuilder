@@ -171,6 +171,7 @@
     <Content Include="assets\img\logo\BLOGO.png" />
     <Content Include="assets\img\logo\Brain Builder.png" />
     <Content Include="assets\img\certificate_template.jpg" />
+    <Content Include="assets\img\Profile\std.jpg" />
     <Content Include="assets\js\animated.headline.js" />
     <Content Include="assets\js\bootstrap.min.js" />
     <Content Include="assets\js\contact.js" />
@@ -391,6 +392,7 @@
     <Content Include="Result.aspx" />
     <Content Include="software-development.aspx" />
     <Content Include="Test.aspx" />
+    <Content Include="UserProfile.aspx" />
     <Content Include="Web.config" />
     <Content Include="Default.aspx" />
   </ItemGroup>
@@ -570,6 +572,13 @@
     </Compile>
     <Compile Include="Test.aspx.designer.cs">
       <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile.aspx.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserProfile.aspx.designer.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

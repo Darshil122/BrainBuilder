@@ -19,6 +19,7 @@
 
          <div id="certificateSection" runat="server" visible="false">
             <a id="certificateLinkElement" runat="server" class="btn btn-success">Download Certificate</a>
+             <a href="Default.aspx">Go to Home page</a>
         </div>
 
     </div>

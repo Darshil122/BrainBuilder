@@ -39,6 +39,8 @@
                 </div>
                 <div class="form-input">
                     <asp:Button ID="btnLogin" runat="server" Class="btn btn-primary" Text="Log in" OnClick="LoginUser"/>
+                    <asp:Label ID="lblError" runat="server" ForeColor="Red" Visible="False"></asp:Label>
+
                 </div>
                 <!-- Forget Password -->
                 <a href="../Default.aspx" class="forget">Forget Password</a>

@@ -8,7 +8,7 @@
                 <div class="col-md-12">
                     <div class="card mt-5">
                         <div class="card-header">
-                            <strong class="card-title">User Table</strong>
+                            <strong class="card-title">Student Table</strong>
                         </div>
                         <div class="card-body">
                             <table id="bootstrap-data-table" class="table table-striped table-bordered">
@@ -17,7 +17,7 @@
                                         <th>ID</th>
                                         <th>Name</th>
                                         <th>Email</th>
-                                        <%--<th>Phone</th>--%>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -27,6 +27,7 @@
                                                 <td><%# Eval("UserID") %></td>
                                                 <td><%# Eval("FullName") %></td>
                                                 <td><%# Eval("Email") %></td>
+                                                <td><asp:Button ID="Button1" runat="server" Text="Delete" CssClass="btn btn-danger"/></td>
                                             </tr>
                                         </ItemTemplate>
                                     </asp:Repeater>

@@ -63,6 +63,7 @@
     </style>
 </head>
 <body>
+    <form runat="server" id="form1">
     <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
             <div id="main-menu" class="main-menu collapse navbar-collapse">
@@ -74,22 +75,7 @@
                         <a href="AddQuestion.aspx"><i class="menu-icon fa fa-cogs"></i>Add Question</a>
                     </li>
                     <li>
-                        <a href="UserData.aspx"><i class="menu-icon fa fa-table"></i>User Data</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="menu-icon fa fa-th"></i>Forms</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="menu-icon fa fa-tasks"></i>Icons</a>
-                    </li>
-                    <li>
-                        <a href="widgets.html"><i class="menu-icon ti-email"></i>Widgets </a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="menu-icon fa fa-bar-chart"></i>Charts</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="menu-icon fa fa-area-chart"></i>Maps</a>
+                        <a href="UserData.aspx"><i class="menu-icon fa fa-table"></i>Student Data</a>
                     </li>
                     <li>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
@@ -186,7 +172,7 @@
 
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
+                            <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar"/>
                         </a>
 
                         <div class="user-menu dropdown-menu">
@@ -223,6 +209,7 @@
         </footer>
         <!-- /.site-footer -->
     </div>
+        </form>
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>

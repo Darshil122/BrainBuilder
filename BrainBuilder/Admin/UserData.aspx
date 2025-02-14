@@ -27,7 +27,7 @@
                                                 <td><%# Eval("UserID") %></td>
                                                 <td><%# Eval("FullName") %></td>
                                                 <td><%# Eval("Email") %></td>
-                                                <td><asp:Button ID="Button1" runat="server" Text="Delete" CssClass="btn btn-danger"/></td>
+                                                <td><%--<asp:Button ID="Button1" runat="server" Text="Delete" CssClass="btn btn-danger"/>--%></td>
                                             </tr>
                                         </ItemTemplate>
                                     </asp:Repeater>

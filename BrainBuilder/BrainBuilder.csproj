@@ -207,6 +207,7 @@
     <Content Include="cloud-computing.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="data-science.aspx" />
+    <Content Include="Admin\DeleteUser.aspx" />
     <Content Include="devops.aspx" />
     <Content Include="ExamAlreadyTaken.aspx" />
     <Content Include="GenerateCertificate.aspx" />
@@ -494,6 +495,13 @@
     </Compile>
     <Compile Include="data-science.aspx.designer.cs">
       <DependentUpon>data-science.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DeleteUser.aspx.cs">
+      <DependentUpon>DeleteUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DeleteUser.aspx.designer.cs">
+      <DependentUpon>DeleteUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="devops.aspx.cs">
       <DependentUpon>devops.aspx</DependentUpon>

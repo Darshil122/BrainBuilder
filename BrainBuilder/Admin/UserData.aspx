@@ -27,7 +27,11 @@
                                                 <td><%# Eval("UserID") %></td>
                                                 <td><%# Eval("FullName") %></td>
                                                 <td><%# Eval("Email") %></td>
-                                                <td><%--<asp:Button ID="Button1" runat="server" Text="Delete" CssClass="btn btn-danger"/>--%></td>
+                                                <td>
+                                                    <a href='DeleteUser.aspx?ID=<%# HttpUtility.UrlEncode(Eval("UserID").ToString()) %>'
+                                                        class="btn btn-danger">Delete
+                                                    </a>
+                                                </td>
                                             </tr>
                                         </ItemTemplate>
                                     </asp:Repeater>

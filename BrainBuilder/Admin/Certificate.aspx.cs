@@ -3,7 +3,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Web.UI.WebControls;
 
-namespace BrainBuilder
+namespace BrainBuilder.Admin
 {
     public partial class Certificate : System.Web.UI.Page
     {
@@ -17,15 +17,15 @@ namespace BrainBuilder
 
         private void LoadCertificates()
         {
-            string userName = Session["UserName"].ToString(); // Get logged-in user
+            //string userName = Session["UserName"].ToString(); // Get logged-in user
 
             string connectionString = ConfigurationManager.ConnectionStrings["BrainBuilderDB"].ConnectionString;
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "SELECT ID, StudentName, CourseName, GeneratedAt, CertificatePath FROM Certificates WHERE StudentName = @Name";
+                string query = "SELECT ID, StudentName, CourseName, GeneratedAt, CertificatePath FROM Certificates";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@Name", userName);
+                    //cmd.Parameters.AddWithValue("@Name", userName);
                     conn.Open();
                     SqlDataReader reader = cmd.ExecuteReader();
                     rptCertificates.DataSource = reader;

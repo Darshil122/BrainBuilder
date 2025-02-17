@@ -78,7 +78,7 @@
                         <a href="UserData.aspx"><i class="menu-icon fa fa-table"></i>Student Data</a>
                     </li>
                     <li>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
+                        <a href="Certificate.aspx"><i class="menu-icon fa fa-glass"></i>Certificate</a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->

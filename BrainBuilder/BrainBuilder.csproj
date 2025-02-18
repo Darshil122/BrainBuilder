@@ -91,6 +91,7 @@
     <Content Include="Admin\assets\fonts\icomoon\icomoon.svg" />
     <Content Include="Admin\assets\fonts\icomoon\index.html" />
     <Content Include="Admin\Certificate.aspx" />
+    <Content Include="Admin\DeleteQuestion.aspx" />
     <Content Include="Admin\images\.gitignore" />
     <Content Include="Admin\images\admin.jpg" />
     <Content Include="Admin\images\avatar\1.jpg" />
@@ -101,6 +102,7 @@
     <Content Include="Admin\images\avatar\6.jpg" />
     <Content Include="Admin\images\avatar\64-1.jpg" />
     <Content Include="Admin\images\avatar\64-2.jpg" />
+    <Content Include="Admin\images\BBLogo.png" />
     <Content Include="Admin\images\favicon.png" />
     <Content Include="Admin\images\logo.png" />
     <Content Include="Admin\images\logo2.png" />
@@ -138,6 +140,7 @@
     <Content Include="Admin\assets\js\widgets.js" />
     <Content Include="Admin\assets\scss\style.css" />
     <Content Include="Admin\Dashboard.aspx" />
+    <Content Include="Admin\QuestionList.aspx" />
     <Content Include="Admin\UserData.aspx" />
     <Content Include="assets\css\animate.min.css" />
     <Content Include="assets\css\animated-headline.css" />
@@ -461,6 +464,20 @@
     </Compile>
     <Compile Include="Admin\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DeleteQuestion.aspx.cs">
+      <DependentUpon>DeleteQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DeleteQuestion.aspx.designer.cs">
+      <DependentUpon>DeleteQuestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\QuestionList.aspx.cs">
+      <DependentUpon>QuestionList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\QuestionList.aspx.designer.cs">
+      <DependentUpon>QuestionList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\UserData.aspx.cs">
       <DependentUpon>UserData.aspx</DependentUpon>

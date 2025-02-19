@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Data.SqlClient;  // For database operations
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Drawing.Text;
 using System.IO;
 using System.Web;
-using System.Configuration;  // For connection string
+using System.Configuration;
 
 namespace BrainBuilder
 {
@@ -13,7 +13,15 @@ namespace BrainBuilder
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string studentName = Request.QueryString["name"] ?? "John Doe";
+            // Ensure user is logged in
+            if (Session["UserID"] == null)
+            {
+                Response.Redirect("~/Account/Login.aspx");
+                return;
+            }
+
+            int userId = Convert.ToInt32(Session["UserId"]);
+            string studentName = Session["UserName"]?.ToString() ?? "John Doe";
             string courseName = Request.QueryString["course"] ?? "Azure Data Engineer";
             string score = Request.QueryString["score"] ?? "80";
 
@@ -25,7 +33,7 @@ namespace BrainBuilder
             string certificatesFolder = Server.MapPath("~/certificates/");
             if (!Directory.Exists(certificatesFolder))
             {
-                Directory.CreateDirectory(certificatesFolder); // Create the folder if not exists
+                Directory.CreateDirectory(certificatesFolder);
             }
 
             // Define output file path
@@ -43,28 +51,22 @@ namespace BrainBuilder
 
                 Brush brush = new SolidBrush(Color.Black);
 
-                // Get image dimensions
                 int imageWidth = image.Width;
-
-                // Measure text width
                 SizeF studentNameSize = graphics.MeasureString(studentName, studentFont);
                 SizeF courseNameSize = graphics.MeasureString(courseName, courseFont);
 
-                // Calculate centered X positions
                 float studentNameX = (imageWidth - studentNameSize.Width) / 2;
                 float courseNameX = (imageWidth - courseNameSize.Width) / 2;
 
-                // Draw text
                 graphics.DrawString(studentName, studentFont, brush, new PointF(studentNameX, 625));
                 graphics.DrawString(courseName, courseFont, brush, new PointF(courseNameX, 400));
 
-                // Save the final certificate
                 image.Save(outputPath, ImageFormat.Png);
             }
 
-            // Save the certificate path in the database
-            string dbPath = $"/certificates/{courseName}_Certificate.png";  // Use relative path for database
-            SaveCertificateToDatabase(studentName, courseName, Convert.ToDecimal(score), dbPath);
+            // Save the relative path in the database
+            string dbPath = $"/certificates/{courseName}_Certificate.png";
+            SaveCertificateToDatabase(userId, courseName, Convert.ToDecimal(score), dbPath);
 
             // Serve the file for download
             Response.ContentType = "image/png";
@@ -73,24 +75,23 @@ namespace BrainBuilder
             Response.End();
         }
 
-        private void SaveCertificateToDatabase(string studentName, string courseName, decimal score, string certificatePath)
+        private void SaveCertificateToDatabase(int userId, string courseName, decimal score, string certificatePath)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["BrainBuilderDB"].ConnectionString;
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "INSERT INTO Certificates (StudentName, CourseName, Score, CertificatePath) VALUES (@StudentName, @CourseName, @Score, @CertificatePath)";
+                string query = "INSERT INTO Certificates (UserId, CourseName, Score, CertificatePath) VALUES (@UserId, @CourseName, @Score, @CertificatePath)";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@StudentName", studentName);
+                    cmd.Parameters.AddWithValue("@UserId", userId);
                     cmd.Parameters.AddWithValue("@CourseName", courseName);
                     cmd.Parameters.AddWithValue("@Score", score);
                     cmd.Parameters.AddWithValue("@CertificatePath", certificatePath);
 
                     conn.Open();
                     cmd.ExecuteNonQuery();
-                    conn.Close();
                 }
             }
         }

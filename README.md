@@ -19,8 +19,9 @@ Brain Builder is an online platform that allows users to take course tests, gene
     - View test results and issue certificates.
     - Analytics on student performance.
 5. Database Management
-- SQL Server used for efficient data handling.
-- Tables for users, courses, test results, and certificates.
+    - SQL Server used for efficient data handling.
+    - Tables for users, courses, test results, and certificates.
+      
 ## Technology Stack
 - **Frontend:** HTML, CSS, Bootstrap, JavaScript
 - **Backend:** ASP.NET (C#)

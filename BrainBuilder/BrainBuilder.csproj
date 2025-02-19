@@ -213,6 +213,8 @@
     <Content Include="data-science.aspx" />
     <Content Include="Admin\DeleteUser.aspx" />
     <Content Include="devops.aspx" />
+    <Content Include="Admin\EditQuestion.aspx" />
+    <Content Include="DownloadCertificate.aspx" />
     <Content Include="ExamAlreadyTaken.aspx" />
     <Content Include="GenerateCertificate.aspx" />
     <Content Include="generative-ai.aspx" />
@@ -534,6 +536,20 @@
     </Compile>
     <Compile Include="devops.aspx.designer.cs">
       <DependentUpon>devops.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditQuestion.aspx.cs">
+      <DependentUpon>EditQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditQuestion.aspx.designer.cs">
+      <DependentUpon>EditQuestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DownloadCertificate.aspx.cs">
+      <DependentUpon>DownloadCertificate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DownloadCertificate.aspx.designer.cs">
+      <DependentUpon>DownloadCertificate.aspx</DependentUpon>
     </Compile>
     <Compile Include="ExamAlreadyTaken.aspx.cs">
       <DependentUpon>ExamAlreadyTaken.aspx</DependentUpon>

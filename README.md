@@ -5,7 +5,6 @@ Brain Builder is an online platform that allows users to take course tests, gene
 1. User Authentication
     - Secure login and registration system.
     - Role-based access control (Admin, Instructor, Student).
-    - Password hashing for security.
 2. Online Course Test
     - Users can attempt multiple-choice or descriptive tests.
     - Timer functionality for time-bound exams.

@@ -181,12 +181,6 @@ namespace BrainBuilder
 
         protected void FinishButton_Click(object sender, EventArgs e)
         {
-            if (Session["UserID"] == null)
-            {
-                Response.Redirect("~/Account/Login.aspx");
-                return;
-            }
-
             int userID = Convert.ToInt32(Session["UserID"]);
 
             // Fetch all user submissions from the database

@@ -20,7 +20,7 @@
                                         <th>ID</th>
                                         <th>Name</th>
                                         <th>Course</th>
-                                        <th>Completion Date</th>
+                                        <th>Issue Date</th>
                                         <th>Certificate issue</th>
                                     </tr>
                                 </thead>
@@ -28,13 +28,13 @@
                                     <asp:Repeater ID="rptCertificates" runat="server">
                                         <ItemTemplate>
                                             <tr>
-                                                <td><%# Eval("ID") %></td>
-                                                <td><%# Eval("StudentName") %></td>
+                                                <td><%# Eval("CertificateId") %></td>
+                                                <td><%# Eval("FullName") %></td>
                                                 <td><%# Eval("CourseName") %></td>
-                                                <td><%# Eval("GeneratedAt") %></td>
+                                                <td><%# Eval("IssueDate") %></td>
                                                 <td>
                                                     <a href='<%# Eval("CertificatePath") %>' target="_blank" class="btn btn-primary">
-                                                        <i class="fa fa-download"></i>View Certificate
+                                                        <%--<i class="fa fa-download"></i>--%>View Certificate
                                                     </a>
                                                 </td>
                                             </tr>

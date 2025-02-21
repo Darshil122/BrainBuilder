@@ -11,7 +11,7 @@ namespace BrainBuilder
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Session["Result"] = null;
         }
     }
 }

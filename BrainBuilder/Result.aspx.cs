@@ -15,7 +15,7 @@ namespace BrainBuilder
                 int correctCount = result.CorrectCount;
                 int totalQuestions = result.TotalQuestions;
                 double percentageScore = result.PercentageScore;
-                string studentName = Session["UserName"]?.ToString() ?? "Student"; 
+                string studentName = Session["UserName"]?.ToString() ?? "Student";
                 string courseName = GetCourseName();
 
                 // Display the result with course name
@@ -29,7 +29,8 @@ namespace BrainBuilder
                 }
                 else
                 {
-                    certificateSection.Visible = false; // Hide if score < 80%
+                    certificateSection.Visible = false;
+                    failsection.Visible = true;
                 }
             }
             else

@@ -9,6 +9,11 @@ namespace BrainBuilder.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //if (Session["UserID"] == null)
+            //{
+            //    Response.Redirect("../Account/Login.aspx");
+            //    return;
+            //}
             if (!IsPostBack)
             {
                 LoadCertificates();
@@ -22,7 +27,7 @@ namespace BrainBuilder.Admin
             string connectionString = ConfigurationManager.ConnectionStrings["BrainBuilderDB"].ConnectionString;
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "SELECT ID, StudentName, CourseName, GeneratedAt, CertificatePath FROM Certificates";
+                string query = "SELECT c.CertificateId, c.UserId, u.fullname, c.CourseName, c.IssueDate, c.CertificatePath FROM Certificates c JOIN Users u ON c.UserId = u.UserId";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     //cmd.Parameters.AddWithValue("@Name", userName);

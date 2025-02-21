@@ -171,10 +171,8 @@
     <Content Include="assets\img\gallery\machine.png" />
     <Content Include="assets\img\gallery\softwareDev.png" />
     <Content Include="assets\img\logo\bb.png" />
-    <Content Include="assets\img\logo\BBlogo.png" />
-    <Content Include="assets\img\logo\BLOGO.png" />
-    <Content Include="assets\img\logo\Brain Builder.png" />
     <Content Include="assets\img\certificate_template.jpg" />
+    <Content Include="assets\img\logo\icon.jpg" />
     <Content Include="assets\img\Profile\std.jpg" />
     <Content Include="assets\js\animated.headline.js" />
     <Content Include="assets\js\bootstrap.min.js" />
@@ -380,10 +378,7 @@
     <Content Include="assets\img\icon\icon3.svg" />
     <Content Include="assets\img\icon\right-icon.svg" />
     <Content Include="assets\img\login-bg.mp4" />
-    <Content Include="assets\img\logo\loder.png" />
     <Content Include="assets\img\logo\loder.svg" />
-    <Content Include="assets\img\logo\logo.png" />
-    <Content Include="assets\img\logo\logo2_footer.png" />
     <Content Include="assets\img\post\next.png" />
     <Content Include="assets\img\post\post_1.png" />
     <Content Include="assets\img\post\post_10.png" />

@@ -21,6 +21,10 @@
             <a id="certificateLinkElement" runat="server" class="btn btn-success">Download Certificate</a>
              <a href="Default.aspx">Go to Home page</a>
         </div>
+        <div id="failsection" runat="server" visible="false">
+            <p>You are Fail in this exam because your score lest then 80%</p>
+            <a href="Default.aspx">Go to Home page</a>
+        </div>
 
     </div>
 </body>

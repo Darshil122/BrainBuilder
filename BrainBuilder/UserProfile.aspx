@@ -88,45 +88,49 @@
                         <div class="card p-5 shadow-lg mt-4">
                             <h2>Your Certificates</h2>
                             <div class="row mt-3">
-                                <% if (Session["UserCertificates"] != null)
-                                    {
-                                        List<string> certificates = (List<string>)Session["UserCertificates"];
-                                        if (certificates.Count > 1)
-                                        { %>
-                                <!-- Slider for Multiple Certificates -->
-                                <div class="owl-carousel owl-theme">
-                                    <% foreach (string certPath in certificates)
-                                        { %>
-                                    <div class="item text-center">
-                                        <div class="card p-3 border-black">
-                                            <a href='DownloadCertificate.aspx?file=<%= HttpUtility.UrlEncode(certPath) %>'>
-                                                <img src="<%= certPath %>" class="img-fluid rounded" alt="Certificate">
-                                            </a>
-                                        </div>
-                                        <p>Click on the certificate to download.</p>
-                                    </div>
-                                    <% } %>
-                                </div>
-                                <% }
-                                else
-                                { %>
-                                <!-- Single Certificate Display -->
-                                <div class="col-md-6 text-center mb-4">
-                                    <div class="card p-3 shadow-lg border-0">
-                                        <a href='DownloadCertificate.aspx?file=<%= HttpUtility.UrlEncode(certificates[0]) %>'>
-                                            <img src="<%= certificates[0] %>" class="img-fluid rounded" alt="Certificate">
-                                        </a>
-                                    </div>
-                                    <p>Click on the certificate to download.</p>
-                                </div>
-                                <% }
-                                     }
-                                     else
-                                     { %>
-                                <div class="col-12 text-center mb-5">
-                                    <p class="text-muted">No certificates found.</p>
-                                </div>
-                                <% } %>
+                               <% if (Session["UserCertificates"] != null)
+    {
+        List<string> certificates = (List<string>)Session["UserCertificates"];
+        if (certificates.Count > 0) // Ensure the list is not empty
+        {
+            if (certificates.Count > 1)
+            { %>
+            <!-- Slider for Multiple Certificates -->
+            <div class="owl-carousel owl-theme">
+                <% foreach (string certPath in certificates)
+                    { %>
+                <div class="item text-center">
+                    <div class="card p-3 border-black">
+                        <a href='DownloadCertificate.aspx?file=<%= HttpUtility.UrlEncode(certPath) %>'>
+                            <img src="<%= certPath %>" class="img-fluid rounded" alt="Certificate">
+                        </a>
+                    </div>
+                    <p>Click on the certificate to download.</p>
+                </div>
+                <% } %>
+            </div>
+            <% }
+            else
+            { %>
+            <!-- Single Certificate Display -->
+            <div class="col-md-6 text-center mb-4">
+                <div class="card p-3 shadow-lg border-0">
+                    <a href='DownloadCertificate.aspx?file=<%= HttpUtility.UrlEncode(certificates[0]) %>'>
+                        <img src="<%= certificates[0] %>" class="img-fluid rounded" alt="Certificate">
+                    </a>
+                </div>
+                <p>Click on the certificate to download.</p>
+            </div>
+            <% }
+        }
+        else
+        { %>
+        <div class="col-12 text-center mb-5">
+            <p class="text-muted">No certificates found.</p>
+        </div>
+        <% }
+    } %>
+
                             </div>
                         </div>
                     </div>

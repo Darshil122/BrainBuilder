@@ -32,7 +32,7 @@ namespace BrainBuilder.Admin
                     lblTotalCourses.Text = reader["TotalCourses"].ToString();
                     lblTotalStudents.Text = reader["TotalStudents"].ToString();
                     lblTotalCertificates.Text = reader["TotalCertificates"].ToString();
-                    lblSuccessRate.Text = reader["SuccessRate"].ToString() + "%";
+                    //lblSuccessRate.Text = reader["SuccessRate"].ToString() + "%";
                 }
                 reader.Close();
             }

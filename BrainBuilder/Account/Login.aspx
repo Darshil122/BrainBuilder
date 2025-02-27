@@ -20,9 +20,20 @@
     <link rel="stylesheet" href="../assets/css/slick.css" />
     <link rel="stylesheet" href="../assets/css/nice-select.css" />
     <link rel="stylesheet" href="../assets/css/style.css" />
+    <style>
+    .bg-img {
+    background: url('../assets/img/bg_login.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    </style>
 </head>
 <body>
-    <main class="login-body bg-">  
+    <main class="login-body bg-img">  
         <!-- Login Admin -->
         <form id="loginForm" runat="server">
             <div class="login-form">
@@ -42,10 +53,10 @@
                     <asp:Label ID="lblError" runat="server" ForeColor="Red" Visible="False"></asp:Label>
 
                 </div>
-                <!-- Forget Password -->
-                <a href="../Default.aspx" class="forget">Forget Password</a>
                 <!-- Registration -->
-                <a href="Register.aspx" class="registration">Registration</a>
+                <a href="Register.aspx" class="registration">you don't have Account?</a>
+                <!-- Forget Password -->
+                <a href="../Default.aspx" class="forget">Forget Password?</a>
             </div>
         </form>
 

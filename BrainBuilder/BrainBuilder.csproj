@@ -142,6 +142,7 @@
     <Content Include="Admin\Dashboard.aspx" />
     <Content Include="Admin\QuestionList.aspx" />
     <Content Include="Admin\UserData.aspx" />
+    <Content Include="assets\bg_login.jpg" />
     <Content Include="assets\css\animate.min.css" />
     <Content Include="assets\css\animated-headline.css" />
     <Content Include="assets\css\bootstrap.min.css" />

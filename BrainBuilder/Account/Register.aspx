@@ -20,9 +20,20 @@
     <link rel="stylesheet" href="../assets/css/slick.css" />
     <link rel="stylesheet" href="../assets/css/nice-select.css" />
     <link rel="stylesheet" href="../assets/css/style.css" />
+    <style>
+    .bg-img {
+    background: url('../assets/img/bg_login.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    </style>
 </head>
 <body>
-    <main class="login-body">
+    <main class="login-body bg-img">
     <!-- Login Admin -->
     <form runat="server" class="form-default" method="post">
         
@@ -53,7 +64,7 @@
             <div class="form-input">
                 <input type="submit" runat="server" name="submit" OnServerClick="RegisterUser" value="Registration"/>
             </div>
-            <a href="Login.aspx" class="text-white">Already you have Register?</a>
+            <a href="Login.aspx" class="text-white">Already you have Registration?</a>
         </div>
     </form>
     <!-- /end login form -->

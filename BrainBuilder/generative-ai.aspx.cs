@@ -18,24 +18,24 @@ namespace BrainBuilder
                 Response.Redirect("~/Account/Login.aspx");
             }
             int userID = Convert.ToInt32(Session["UserID"]);
-            int courseID = 3;
+            string courseName = "Generative AI";
 
-            if (HasUserAlreadyTakenExam(userID, courseID))
+            if (HasUserAlreadyTakenExam(userID, courseName))
             {
                 Response.Redirect("~/ExamAlreadyTaken.aspx");
             }
         }
 
-        private bool HasUserAlreadyTakenExam(int userID, int courseID)
+        private bool HasUserAlreadyTakenExam(int userID, string courseName)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["BrainBuilderDB"].ConnectionString;
-            string query = "SELECT COUNT(*) FROM UserSubmissions WHERE UserID = @UserID AND CourseID = @CourseID";
+            string query = "SELECT COUNT(*) FROM Certificates WHERE UserID = @UserID AND CourseName = @CourseName";
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@UserID", userID);
-                cmd.Parameters.AddWithValue("@CourseID", courseID);
+                cmd.Parameters.AddWithValue("@CourseName", courseName);
 
                 try
                 {

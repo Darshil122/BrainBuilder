@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Register page</title>
-     <!-- CSS here -->
+    <!-- CSS here -->
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../assets/css/owl.carousel.min.css" />
     <link rel="stylesheet" href="../assets/css/slicknav.css" />
@@ -21,55 +21,56 @@
     <link rel="stylesheet" href="../assets/css/nice-select.css" />
     <link rel="stylesheet" href="../assets/css/style.css" />
     <style>
-    .bg-img {
-    background: url('../assets/img/bg_login.jpg') no-repeat center center fixed;
-    background-size: cover;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
+        .bg-img {
+            background: url('../assets/img/bg_login.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 </head>
 <body>
     <main class="login-body bg-img">
-    <!-- Login Admin -->
-    <form runat="server" class="form-default" method="post">
-        
-        <div class="login-form">
-            <h2>Registration Here</h2>
+        <form runat="server" class="form-default">
+            <div class="login-form">
+                <h2>Registration Here</h2>
 
-            <div class="form-input">
-                <label for="name">Full name</label>
-                <input  type="text" name="name" placeholder="Full name" id="name" runat="server"/>
-                <asp:Label ID="Namerror" runat="server" CssClass="text-danger" Visible="false" Text="Please enter your name."></asp:Label>
+                <div class="form-input">
+                    <label for="txtName">Full Name</label>
+                    <asp:TextBox ID="txtName" runat="server" CssClass="form-control" placeholder="Full Name" />
+                    <asp:Label ID="Namerror" runat="server" CssClass="text-danger" Visible="false" Text="Please enter your name."></asp:Label>
+                </div>
+
+                <div class="form-input">
+                    <label for="txtEmail">Email Address</label>
+                    <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" placeholder="Email Address" />
+                    <asp:Label ID="Emailerror" runat="server" CssClass="text-danger" Visible="false" Text="Please enter your email."></asp:Label>
+                </div>
+
+                <div class="form-input">
+                    <label for="txtPassword">Password</label>
+                    <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password" placeholder="Password" />
+                    <asp:Label ID="Passerror" runat="server" CssClass="text-danger" Visible="false" Text="Please enter a password."></asp:Label>
+                </div>
+
+                <div class="form-input">
+                    <label for="txtConfirmPassword">Confirm Password</label>
+                    <asp:TextBox ID="txtConfirmPassword" runat="server" CssClass="form-control" TextMode="Password" placeholder="Confirm Password" />
+                    <asp:Label ID="cpasserror" runat="server" CssClass="text-danger" Visible="false" Text="Please enter your confirm password."></asp:Label>
+                    <asp:Label ID="cppasserror" runat="server" CssClass="text-danger" Visible="false" Text="Both passwords don't match."></asp:Label>
+                </div>
+
+                <div class="form-input">
+                    <asp:Button ID="btnRegister" runat="server" CssClass="btn btn-primary" Text="Register" OnClick="RegisterUser" />
+                </div>
+
+                <a href="Login.aspx" class="text-white">Already registered?</a>
             </div>
-            <div class="form-input">
-                <label for="name">Email Address</label>
-                <input type="email" name="email" id="email" placeholder="Email Address" runat="server"/>
-                <asp:Label ID="Emailerror" runat="server" CssClass="text-danger" Visible="false" Text="Please enter your email."></asp:Label>
-            </div>
-            <div class="form-input">
-                <label for="name">Password</label>
-                <input type="password" name="password" id="password" placeholder="Password" runat="server"/>
-                <asp:Label ID="Passerror" runat="server" CssClass="text-danger" Visible="false" Text="Please enter password."></asp:Label>
-            </div>
-            <div class="form-input">
-                <label for="name">Confirm Password</label>
-                <input type="password" name="password" id="confirmPassword" placeholder="Confirm Password" runat="server"/>
-                <asp:Label ID="cpasserror" runat="server" CssClass="text-danger" Visible="false" Text="Please enter your confirm password."></asp:Label>
-                <asp:Label ID="cppasserror" runat="server" CssClass="text-danger" Visible="false" Text="Both password doesn't match."></asp:Label>
-            </div>
-            <div class="form-input">
-                <input type="submit" runat="server" name="submit" OnServerClick="RegisterUser" value="Registration"/>
-            </div>
-            <a href="Login.aspx" class="text-white">Already you have Registration?</a>
-        </div>
-    </form>
-    <!-- /end login form -->
-</main>
-     <script src="../assets/js/vendor/modernizr-3.5.0.min.js"></script>
+        </form>
+    </main>
+    <script src="../assets/js/vendor/modernizr-3.5.0.min.js"></script>
     <!-- Jquery, Popper, Bootstrap -->
     <script src="../assets/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="../assets/js/popper.min.js"></script>

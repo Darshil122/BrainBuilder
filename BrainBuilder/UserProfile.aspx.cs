@@ -10,24 +10,23 @@ namespace BrainBuilder
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["UserEmail"] == null)  // Ensure user is logged in
+            if (Session["UserEmail"] == null)  
             {
                 Response.Redirect("Account/Login.aspx");
                 return;
             }
 
-            string userId = Session["UserID"]?.ToString();  // Get user email safely
+            string userId = Session["UserID"]?.ToString();  
 
-            List<string> certificatePaths = new List<string>();  // Store multiple certificates
-
+            List<string> certificatePaths = new List<string>();  
             string connectionString = ConfigurationManager.ConnectionStrings["BrainBuilderDB"].ConnectionString;
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "SELECT * FROM Certificates WHERE UserId = @userId";  // Use Email instead of Name
+                string query = "SELECT * FROM Certificates WHERE UserId = @userId";  
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@userId", userId); // Parameterized query to prevent SQL injection
+                    cmd.Parameters.AddWithValue("@userId", userId); 
 
                     try
                     {

@@ -113,7 +113,8 @@
                     <!-- img -->
                     <div class="right-img">
                         <div class="video-icon">
-                            <iframe class="rounded" width="560" height="315" src="https://www.youtube.com/embed/594ITLAyL1o?si=YXxN7EGoolsRoujH&amp;start=10" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/Wchru8alhaE?si=d6C3xxnhAyWfqy9E&amp;start=7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
                         </div>
                     </div>
                 </div>

@@ -7,21 +7,22 @@ namespace BrainBuilder.Account
     public partial class Register : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        { 
+        {
         }
 
         protected void RegisterUser(object sender, EventArgs e)
         {
+            // Hide error messages initially
             Namerror.Visible = false;
             Emailerror.Visible = false;
             Passerror.Visible = false;
             cpasserror.Visible = false;
             cppasserror.Visible = false;
 
-            string fullName = Request.Form["name"];
-            string email = Request.Form["email"];
-            string password = Request.Form["password"];
-            string confirmPassword = Request.Form["confirmPassword"];
+            string fullName = txtName.Text.Trim();
+            string email = txtEmail.Text.Trim();
+            string password = txtPassword.Text;
+            string confirmPassword = txtConfirmPassword.Text;
 
             bool isValid = true;
 
@@ -40,18 +41,19 @@ namespace BrainBuilder.Account
                 Passerror.Visible = true;
                 isValid = false;
             }
-
-            if (string.IsNullOrWhiteSpace(confirmPassword)){
+            if (string.IsNullOrWhiteSpace(confirmPassword))
+            {
                 cpasserror.Visible = true;
                 isValid = false;
             }
-
             if (password != confirmPassword)
             {
                 cppasserror.Visible = true;
                 isValid = false;
             }
 
+            // Stop execution if validation fails
+            if (!isValid) return;
 
             string connectionString = ConfigurationManager.ConnectionStrings["BrainBuilderDB"].ConnectionString;
 
@@ -62,7 +64,7 @@ namespace BrainBuilder.Account
 
                 cmd.Parameters.AddWithValue("@FullName", fullName);
                 cmd.Parameters.AddWithValue("@Email", email);
-                cmd.Parameters.AddWithValue("@Password", password);
+                cmd.Parameters.AddWithValue("@Password", password); // Consider hashing the password
 
                 try
                 {

@@ -9,9 +9,9 @@ namespace BrainBuilder
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            var result = Session["Result"] as dynamic;
             if (Session["Result"] != null)
             {
-                var result = Session["Result"] as dynamic;
                 int correctCount = result.CorrectCount;
                 int totalQuestions = result.TotalQuestions;
                 double percentageScore = result.PercentageScore;

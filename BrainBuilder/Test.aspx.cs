@@ -209,10 +209,9 @@ namespace BrainBuilder
                 }
             }
 
-            // Calculate the percentage score
+            
             double percentageScore = (double)correctCount / totalQuestions * 100;
 
-            // Redirect to the result page or display the result
             Session["Result"] = new
             {
                 CorrectCount = correctCount,

@@ -19,7 +19,9 @@ namespace BrainBuilder
                 string courseName = GetCourseName();
 
                 // Display the result with course name
-                resultText.InnerText = $"Course: {courseName} - You answered {correctCount} out of {totalQuestions} questions correctly. Your score is {percentageScore:F2}%.";
+                //resultText.InnerText = $"Course: {courseName} - You answered {correctCount} out of {totalQuestions} questions correctly. Your score is {percentageScore:F2}%.";
+                resultText.InnerText = $"Course: {courseName} - You are pass download your certificate";
+
 
                 if (percentageScore >= 80)
                 {

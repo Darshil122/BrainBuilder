@@ -119,7 +119,7 @@ namespace BrainBuilder
             else
             {
                 // Show Bootstrap alert
-                Response.Write("<script>alert('Failed to save answer.')</script>");
+                ShowError("Failed to save Answer");
 
             }
         }
@@ -156,7 +156,6 @@ namespace BrainBuilder
                 cmd.Parameters.AddWithValue("@QuestionID", questionID);
                 cmd.Parameters.AddWithValue("@SelectedAnswer", selectedAnswer);
 
-                //Response.Write($"<script>alert('Debug: UserID={Session["UserID"]}, CourseID={Request.QueryString["CourseID"]}, QuestionID={ViewState["CurrentQuestionID"]}, Answer={answerOptions.SelectedValue}')</script>");
                 try
                 {
                     con.Open();
@@ -164,11 +163,11 @@ namespace BrainBuilder
 
                     if (rowsAffected > 0)
                     {
-                        Response.Write("<script>alert('Answer saved successfully!')</script>");
+                        SuccessMsg("Answer saved successfully");
                     }
                     else
                     {
-                        Response.Write("<script>alert('Failed to save answer.')</script>");
+                        ShowError("Failed to save Answer");
                     }
                 }
                 catch (Exception ex)
@@ -254,6 +253,18 @@ namespace BrainBuilder
 
                 return dt;
             }
+        }
+
+        private void ShowError(string message)
+        {
+            lblError.Text = message;
+            lblError.Visible = true;
+        }
+
+        private void SuccessMsg(String message)
+        {
+            lblSuccess.Text = message;
+            lblSuccess.Visible = true;
         }
 
     }

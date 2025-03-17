@@ -48,10 +48,8 @@
                     <asp:ListItem Text="C. Option 3" Value="C"></asp:ListItem>
                     <asp:ListItem Text="D. Option 4" Value="D"></asp:ListItem>
                 </asp:RadioButtonList>
-
-                 <div id="alertMessage" class="alert alert-danger" style="display: none;">
-                    Please select an answer!
-                </div>
+                 <asp:Label ID="lblSuccess" runat="server" ForeColor="Green" Visible="False"></asp:Label>
+                 <asp:Label ID="lblError" runat="server" ForeColor="Red" Visible="False"></asp:Label>
 
 
                 <div class="mt-3">
